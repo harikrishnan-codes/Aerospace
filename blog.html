@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spacly - Aerospace</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+  <link rel="stylesheet" href="root.css">
+  <link rel="stylesheet" href="blog.css">
+  <link rel="icon" href="./assets/bg remove.webp">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header class="header" data-aos="fade-down">
+    <div class="container header-container">
+      <a href="index.html" class="logo">
+        <img src="./assets/orange.webp" alt="logo" width="150px" height="50px">
+      </a>
+
+      <nav class="nav-menu" id="navMenu">
+        <div class="mobile-nav-header">
+          <a href="index.html" class="logo">
+            <img src="./assets/orange.webp" alt="logo" width="150px" height="50px">
+          </a>
+        </div>
+
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="port.html" class="nav-link">Portfolio</a></li>
+          <li><a href="blog.html" class="nav-link">Blog</a></li>
+          <li><a href="event.html" class="nav-link">Events</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+
+        <div class="mobile-nav-footer">
+          <a href="auth.html" class="btn-join mobile-join-btn">Join Us</a>
+        </div>
+      </nav>
+
+      <div class="header-actions">
+        <a href="error.html" class="action-icon">
+          <i class="fa-solid fa-basket-shopping"></i>
+          <span class="cart-badge">0</span>
+        </a>
+        <!-- <button class="action-icon"><i class="fa-solid fa-magnifying-glass"></i></button> -->
+        <a href="auth.html" class="btn-join desktop-join-btn">Join Us</a>
+
+        <button class="hamburger" id="hamburgerBtn" aria-label="Toggle Menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+
+
+
+
+
+  <!-- ==========================================================================
+   Aerospace Blog / Technical Publications Hero Section
+   ========================================================================== -->
+  <section class="blog-hero">
+    <div class="container">
+
+      <!-- Hero Main Content -->
+      <div class="blog-hero-content" data-aos="fade-down">
+        <div class="hero-badge">
+          <span class="badge-dot"></span>
+          <span class="badge-text">TECHNICAL PUBLICATIONS // MISSION LOGS</span>
+        </div>
+
+        <h1 class="hero-title">
+          ORBITAL & AEROSAPCE <span class="text-gradient">INSIGHTS</span>
+        </h1>
+
+        <p class="hero-description">
+          In-depth technical whitepapers, launch analysis reports, thermal shielding breakdowns, and real-time telemetry
+          updates directly from our flight engineering command.
+        </p>
+
+        <!-- High-Tech Search Console Form -->
+        <form class="blog-search-form" action="error.html" method="GET" data-aos="fade-up" data-aos-delay="100">
+          <div class="search-input-wrapper">
+            <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2">
+              <circle cx="11" cy="11" r="8" />
+              <path d="m21 21-4.35-4.35" />
+            </svg>
+            <input type="text" class="search-input" placeholder="Search telemetry logs, CAD models, papers..." required>
+          </div>
+          <button type="submit" class="btn btn-primary search-btn">
+            <span>Search Logs</span>
+          </button>
+        </form>
+
+        <!-- Topic Filter Pills linking to error.html -->
+        <div class="blog-topics" data-aos="fade-up" data-aos-delay="200">
+          <a href="error.html" class="topic-pill active">All Articles</a>
+          <a href="error.html" class="topic-pill">Propulsion</a>
+          <a href="error.html" class="topic-pill">Avionics</a>
+          <a href="error.html" class="topic-pill">Thermal Shielding</a>
+          <a href="error.html" class="topic-pill">SATCOM</a>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+
+
+
+
+  <!-- ==========================================================================
+   Aerospace Blog Featured Article & Main Article Grid Section
+   ========================================================================== -->
+<section class="blog-grid-section" id="articles">
+  <div class="container">
+    
+    <!-- Featured Article Spotlight Card -->
+    <div class="featured-post-card" data-aos="fade-up">
+      <div class="featured-img-wrapper">
+        <img src="https://images.unsplash.com/photo-1517976487492-5750f3195933?auto=format&fit=crop&w=1200&q=80" alt="Ion Propulsion Breakthrough" class="featured-img">
+        <div class="featured-badge">FEATURED LOG</div>
+      </div>
+      <div class="featured-content">
+        <div class="post-meta">
+          <span class="meta-cat">PROPULSION SYSTEMS</span>
+          <span class="meta-date">JULY 24, 2026 // READ TIME: 6 MIN</span>
+        </div>
+        <h2 class="featured-title">
+          <a href="error.html">Next-Gen Dual-Burn Ion Thruster Telemetry Analysis</a>
+        </h2>
+        <p class="featured-excerpt">
+          Comprehensive review of operational data recorded during high-altitude ion engine tests. Includes specific impulse metrics and thermal shield distribution logs.
+        </p>
+        <div class="featured-footer">
+          <div class="author-block">
+            <span class="author-name">Dr. Vance Sterling</span>
+            <span class="author-role">Chief Flight Physicist</span>
+          </div>
+          <a href="error.html" class="btn btn-primary btn-sm">
+            <span>Read Full Paper &rarr;</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Article Grid Header -->
+    <div class="grid-header" data-aos="fade-down">
+      <h3 class="grid-title">Recent Technical Publications</h3>
+      <span class="grid-status">SHOWING 6 OF 24 LOGS</span>
+    </div>
+
+    <!-- Main Articles Grid -->
+    <div class="articles-grid">
+      
+      <!-- Article 1 -->
+      <article class="article-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="article-img-wrapper">
+          <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80" alt="SATCOM Encryption" class="article-img">
+        </div>
+        <div class="article-body">
+          <div class="post-meta">
+            <span class="meta-cat">SATCOM SECURITY</span>
+            <span class="meta-date">JULY 18, 2026</span>
+          </div>
+          <h3 class="article-title">
+            <a href="error.html">Quantum-Resistant Encryption in Deep-Space Downlinks</a>
+          </h3>
+          <p class="article-excerpt">
+            Implementing lattice-based cryptography protocols across multi-band satellite links to mitigate orbital interception risks.
+          </p>
+          <a href="error.html" class="article-link">Read Log &rarr;</a>
+        </div>
+      </article>
+
+      <!-- Article 2 -->
+      <article class="article-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="article-img-wrapper">
+          <img src="https://images.unsplash.com/photo-1541185933-ef5d8ed016c2?auto=format&fit=crop&w=800&q=80" alt="Thermal Shielding Test" class="article-img">
+        </div>
+        <div class="article-body">
+          <div class="post-meta">
+            <span class="meta-cat">THERMAL SHIELDING</span>
+            <span class="meta-date">JULY 12, 2026</span>
+          </div>
+          <h3 class="article-title">
+            <a href="error.html">Ablative Ceramic Performance at Mach 14 Re-Entry</a>
+          </h3>
+          <p class="article-excerpt">
+            Analyzing composite tile structural integrity under simulated 1,800°C atmospheric resistance scenarios.
+          </p>
+          <a href="error.html" class="article-link">Read Log &rarr;</a>
+        </div>
+      </article>
+
+      <!-- Article 3 -->
+      <article class="article-card" data-aos="fade-up" data-aos-delay="300">
+        <div class="article-img-wrapper">
+          <img src="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&w=800&q=80" alt="Autonomous Docking" class="article-img">
+        </div>
+        <div class="article-body">
+          <div class="post-meta">
+            <span class="meta-cat">AVIONICS</span>
+            <span class="meta-date">JUNE 29, 2026</span>
+          </div>
+          <h3 class="article-title">
+            <a href="error.html">Autonomous Optical Docking Algorithms for LEO Staging</a>
+          </h3>
+          <p class="article-excerpt">
+            Machine vision guidance routines configured for zero-latency target alignment during satellite servicing missions.
+          </p>
+          <a href="error.html" class="article-link">Read Log &rarr;</a>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- Pagination Controls -->
+    <div class="blog-pagination" data-aos="fade-up">
+      <a href="error.html" class="page-link active">01</a>
+      <a href="error.html" class="page-link">02</a>
+      <a href="error.html" class="page-link">03</a>
+      <a href="error.html" class="page-link page-next">NEXT &rarr;</a>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+
+
+<!-- ==========================================================================
+   Aerospace Technical Whitepapers & Research Directory
+   ========================================================================== -->
+<section class="whitepaper-section" id="whitepapers">
+  <div class="container">
+    
+    <!-- Section Header Block -->
+    <div class="section-header" data-aos="fade-down">
+      <div class="header-badge">
+        <span class="badge-dot"></span>
+        <span class="badge-text">RESEARCH DIRECTORY // TECHNICAL PAPERS</span>
+      </div>
+      <h2 class="section-title">
+        CLASSIFIED <span class="text-gradient">WHITEPAPER ARCHIVE</span>
+      </h2>
+      <p class="section-description">
+        Download verified flight telemetry analysis, propulsion blueprints, and thermal shielding whitepapers in PDF format.
+      </p>
+    </div>
+
+    <!-- Whitepapers Directory List -->
+    <div class="whitepaper-list" data-aos="fade-up" data-aos-delay="100">
+      
+      <!-- Document Row 1 -->
+      <div class="whitepaper-row">
+        <div class="doc-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+        </div>
+        <div class="doc-info">
+          <div class="doc-meta">
+            <span class="doc-id">DOC_ID // WP-2026-08</span>
+            <span class="doc-size">PDF (4.8 MB)</span>
+          </div>
+          <h3 class="doc-title">Ablative Thermal Barrier Behavior during Hyper-Velocity Staging</h3>
+        </div>
+        <div class="doc-actions">
+          <a href="error.html" class="btn btn-outline btn-sm">
+            <span>Download PDF &rarr;</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Document Row 2 -->
+      <div class="whitepaper-row">
+        <div class="doc-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+        </div>
+        <div class="doc-info">
+          <div class="doc-meta">
+            <span class="doc-id">DOC_ID // WP-2026-04</span>
+            <span class="doc-size">PDF (12.2 MB)</span>
+          </div>
+          <h3 class="doc-title">Multi-Axis Ion Thruster Vectoring in Low-Earth Orbit Constellations</h3>
+        </div>
+        <div class="doc-actions">
+          <a href="error.html" class="btn btn-primary btn-sm">
+            <span>Download PDF &rarr;</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Document Row 3 -->
+      <div class="whitepaper-row">
+        <div class="doc-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+        </div>
+        <div class="doc-info">
+          <div class="doc-meta">
+            <span class="doc-id">DOC_ID // WP-2025-11</span>
+            <span class="doc-size">PDF (8.1 MB)</span>
+          </div>
+          <h3 class="doc-title">Quantum-Resistant SatCom Protocol Security for Deep Space Probes</h3>
+        </div>
+        <div class="doc-actions">
+          <a href="error.html" class="btn btn-outline btn-sm">
+            <span>Download PDF &rarr;</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bottom Action Request -->
+    <div class="whitepaper-footer" data-aos="fade-up">
+      <p>Require classified CAD models or raw CSV telemetry streams?</p>
+      <a href="error.html" class="btn btn-secondary btn-sm">
+        <span>Request Command Credentials</span>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+
+
+<!-- ==========================================================================
+   Blog Editorial & Chief Flight Physicist Spotlight Section
+   (Positioned directly above #dispatch)
+   ========================================================================== -->
+<section class="editorial-spotlight-section" id="chief-editor">
+  <div class="container">
+    
+    <div class="editorial-wrapper" data-aos="fade-up">
+      
+      <!-- Left Column: Author Image & HUD Diagnostics -->
+      <div class="editorial-visual">
+        <div class="author-avatar-frame">
+          <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80" alt="Dr. Vance Sterling" class="author-avatar-img">
+          <span class="hud-corner corner-tl"></span>
+          <span class="hud-corner corner-tr"></span>
+          <span class="hud-corner corner-bl"></span>
+          <span class="hud-corner corner-br"></span>
+        </div>
+        
+        <div class="author-hud-badge">
+          <span class="status-dot"></span>
+          <span class="badge-lbl">CHIEF EDITOR // FLIGHT PHYSICS</span>
+        </div>
+      </div>
+
+      <!-- Right Column: Editorial Narrative & Telemetry Stats -->
+      <div class="editorial-content">
+        <div class="header-badge">
+          <span class="badge-dot"></span>
+          <span class="badge-text">EDITORIAL BOARD // CHIEF INSIGHTS</span>
+        </div>
+
+        <h2 class="editorial-title">
+          CURATED BY <span class="text-gradient">FLIGHT PHYSICISTS</span>
+        </h2>
+
+        <p class="editorial-desc">
+          Every whitepaper, telemetry analysis, and launch briefing published in our archives undergoes rigorous peer review by senior aerospace engineers and orbital mechanics specialists prior to release.
+        </p>
+
+        <!-- Metrics Strip -->
+        <div class="editorial-metrics">
+          <div class="metric-node">
+            <span class="metric-val">120+</span>
+            <span class="metric-lbl">PUBLISHED PAPERS</span>
+          </div>
+          <div class="metric-node">
+            <span class="metric-val">100%</span>
+            <span class="metric-lbl">PEER VERIFIED</span>
+          </div>
+          <div class="metric-node">
+            <span class="metric-val">256-BIT</span>
+            <span class="metric-lbl">ENCRYPTED LOGS</span>
+          </div>
+        </div>
+
+        <!-- Action Buttons linking to error.html -->
+        <div class="editorial-actions">
+          <a href="error.html" class="btn btn-primary btn-lg">
+            <span>Read Editorial Board Bio</span>
+            <svg class="btn-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="error.html" class="btn btn-secondary btn-lg">
+            <span>Submit Technical Paper</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+
+<!-- ==========================================================================
+   Aerospace Live Telemetry Stream & Incident Log (Non-Card Layout)
+   ========================================================================== -->
+<section class="stream-section" id="live-stream">
+  <div class="container">
+    
+    <!-- Section Header Block -->
+    <div class="section-header" data-aos="fade-down">
+      <div class="header-badge">
+        <span class="badge-dot"></span>
+        <span class="badge-text">QUANTUM LINK // REAL-TIME DISPATCH</span>
+      </div>
+      <h2 class="section-title">
+        ORBITAL INCIDENT <span class="text-gradient">STREAM</span>
+      </h2>
+      <p class="section-description">
+        Live telemetry feed monitoring magnetic field anomalies, satellite proximity alerts, and solar thrust differentials.
+      </p>
+    </div>
+
+    <!-- Live Stream Console Strip -->
+    <div class="stream-console-strip" data-aos="fade-up" data-aos-delay="100">
+      
+      <!-- Top Console Bar -->
+      <div class="stream-bar">
+        <div class="stream-indicator">
+          <span class="live-beacon"></span>
+          <span class="stream-label">STREAM_01: ENCRYPTED (BAND-X)</span>
+        </div>
+        <div class="stream-freq">
+          <span>FREQ: 38.4 GHz</span>
+          <span class="freq-divider">//</span>
+          <span class="freq-val">BUFFER: 0ms</span>
+        </div>
+      </div>
+
+      <!-- Live Log Entries Stream -->
+      <div class="stream-logs">
+        
+        <!-- Log 01 -->
+        <div class="log-row">
+          <div class="log-time">[19:42:01]</div>
+          <div class="log-tag tag-success">NOMINAL</div>
+          <div class="log-msg">SAT-09 Solar Panel Matrix deployment verified at 550 km altitude.</div>
+          <div class="log-action">
+            <a href="error.html" class="log-link">Telemetry Data &rarr;</a>
+          </div>
+        </div>
+
+        <!-- Log 02 -->
+        <div class="log-row">
+          <div class="log-time">[19:38:44]</div>
+          <div class="log-tag tag-warn">ANOMALY</div>
+          <div class="log-msg">Minor solar flare flux detected on Deep-Aero sensor array. Thermal shields active.</div>
+          <div class="log-action">
+            <a href="error.html" class="log-link">Telemetry Data &rarr;</a>
+          </div>
+        </div>
+
+        <!-- Log 03 -->
+        <div class="log-row">
+          <div class="log-time">[19:15:20]</div>
+          <div class="log-tag tag-success">NOMINAL</div>
+          <div class="log-msg">Ion Propulsion Thruster dual-burn sequence completed. Orbital velocity: 7.66 km/s.</div>
+          <div class="log-action">
+            <a href="error.html" class="log-link">Telemetry Data &rarr;</a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Console Footer Controls -->
+      <div class="stream-footer">
+        <p class="footer-msg">Require automated Webhook alerts for live orbital anomalies?</p>
+        <div class="footer-actions">
+          <a href="error.html" class="btn btn-primary btn-sm">
+            <span>Configure Telemetry Webhooks</span>
+          </a>
+          <a href="error.html" class="btn btn-outline btn-sm">
+            <span>Download Raw Stream Logs</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+
+<!-- ==========================================================================
+   Aerospace Technical Dispatch & Newsletter Subscription Section
+   ========================================================================== -->
+<section class="dispatch-section" id="dispatch">
+  <div class="container">
+    
+    <div class="dispatch-card" data-aos="zoom-in">
+      
+      <!-- Ambient Visual Effects -->
+      <div class="dispatch-bg-glow"></div>
+      <div class="dispatch-grid-pattern"></div>
+
+      <!-- Main Section Header & Content -->
+      <div class="dispatch-content">
+        <div class="header-badge">
+          <span class="badge-dot"></span>
+          <span class="badge-text">ENCRYPTED DISPATCH // WEEKLY BRIEFING</span>
+        </div>
+
+        <h2 class="dispatch-title">
+          SUBSCRIBE TO <span class="text-gradient">FLIGHT LOGS</span>
+        </h2>
+
+        <p class="dispatch-description">
+          Receive direct orbital telemetry breakdowns, payload integration whitepapers, and classified launch schedule updates directly in your inbox.
+        </p>
+
+        <!-- Subscription Form linking to error.html -->
+        <form class="dispatch-form" action="error.html" method="GET">
+          <div class="input-wrapper">
+            <svg class="input-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <input type="email" class="dispatch-input" placeholder="command@aerospace-org.com" required>
+          </div>
+          <button type="submit" class="btn btn-primary dispatch-btn">
+            <span>Subscribe Dispatch</span>
+          </button>
+        </form>
+
+        <!-- Live Dispatch Telemetry Ticker -->
+        <div class="dispatch-meta">
+          <div class="meta-item">
+            <span class="meta-dot"></span>
+            <span>NEXT DISPATCH: T-MINUS 48 HOURS</span>
+          </div>
+          <span class="meta-divider">//</span>
+          <div class="meta-item">
+            <span>FREQUENCY: BI-WEEKLY</span>
+          </div>
+          <span class="meta-divider">//</span>
+          <div class="meta-item">
+            <span>ENCRYPTION: 256-BIT</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+  <footer class="footer" data-aos="fade-up">
+    <div class="container">
+      <div class="footer-grid">
+
+        <div class="footer-col-about">
+          <a href="index.html" class="logo">
+            <img src="./assets/orange.webp" alt="logo" width="150px" height="50px">
+
+          </a>
+          <p>Architecting next-generation orbital platforms, rocket propulsion systems, and commercial space exploration
+            engines.</p>
+          <div class="social-links">
+            <a href="error.html"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="error.html"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="error.html"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col-links">
+          <h4>Navigation</h4>
+          <ul class="footer-menu">
+            <li><a href="index.html" class="footer-link">Home</a></li>
+            <li><a href="port.html" class="footer-link">Portfolio</a></li>
+            <li><a href="blog.html" class="footer-link">Blog</a></li>
+            <li><a href="event.html" class="footer-link">Events</a></li>
+            <li><a href="contact.html" class="footer-link">Contact</a></li>
+            <li><a href="auth.html" class="footer-link">Log In</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col-links">
+          <h4>Company</h4>
+          <ul class="footer-menu">
+            <li><a href="error.html" class="footer-link">Shop</a></li>
+            <li><a href="error.html" class="footer-link">Pages</a></li>
+            <li><a href="error.html" class="footer-link">Privacy Policy</a></li>
+            <li><a href="error.html" class="footer-link">Terms of Service</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col-newsletter">
+          <h4>Telemetry Updates</h4>
+          <p class="newsletter-desc">Subscribe to our newsletter for latest rocket launches and mission telemetry.</p>
+          <form class="newsletter-form" action="error.html" method="GET">
+            <input type="email" placeholder="Enter your work email..." class="newsletter-input" required>
+            <button type="submit" class="btn-join btn-submit">Subscribe</button>
+          </form>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Spacly Aerospace Tech Inc. All rights reserved.</p>
+        <p>Engineered for deep space systems.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,199 @@
+/* ==========================================================================
+   1. Google Fonts Import (Aerospace Modern & Technical Typography)
+   ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Orbitron:wght@600;700;800;900&family=Rajdhani:wght@500;600;700&display=swap');
+
+/* ==========================================================================
+   2. Aerospace Theme Root Variables
+   ========================================================================== */
+:root {
+  /* Primary Backgrounds & Neutrals */
+  --color-bg-main: #0b0d13;       /* Deep space canvas */
+  --color-bg-surface: #141824;    /* Dark card background */
+  --color-bg-overlay: #00000080;   /* Overlay for hero video/images */
+
+  /* Brand Accents & Interactive Elements */
+  --color-accent-primary: #f03e1e; /* Rocket thrust orange-red */
+  --color-accent-hover: #d32f13;   /* Darker red hover state */
+  --color-accent-glow: rgba(240, 62, 30, 0.35); /* Glow shadow for buttons */
+
+  /* Typography Colors */
+  --color-text-primary: #ffffff;   /* Crisp white */
+  --color-text-secondary: #9aa2b1; /* Metallic light gray */
+  --color-text-muted: #5e6675;     /* Subtle grey */
+  --border-light: rgba(255, 255, 255, 0.12);
+
+  /* Aerospace Font Families */
+  --font-heading: 'Orbitron', 'Rajdhani', sans-serif; /* High-tech industrial heading */
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif; /* Body copy */
+
+  /* Layout & Utility Variables */
+  --navbar-height: 80px;
+  --transition-smooth: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Typography Scale & Line Heights */
+  --fs-h1: clamp(2.5rem, 5vw, 4.5rem); /* Responsive fluid header size */
+  --fs-h2: 2.25rem;
+  --fs-h3: 1.5rem;
+  --fs-p: 1rem;
+  --lh-body: 1.6;
+  --lh-heading: 1.1;
+
+  /* Quick Radius Settings */
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 10px;
+  --radius-full: 9999px;
+
+  /* Elevation & Shadows */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.5);
+  --shadow-glow: 0 0 20px var(--color-accent-glow);
+}
+
+/* ==========================================================================
+   3. Global Reset & Canvas
+   ========================================================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  /* Removed height: 100% and overflow-y: scroll */
+}
+
+body {
+  background-color: var(--color-bg-main);
+  color: var(--color-text-primary);
+  font-family: var(--font-sans);
+  line-height: var(--lh-body);
+  -webkit-font-smoothing: antialiased;
+  
+  /* Standard overflow management to prevent horizontal scroll without duplicate vertical bars */
+  overflow-x: hidden;
+  min-height: 100vh; 
+}
+
+.container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* ==========================================================================
+   4. Aerospace Typography Bindings
+   ========================================================================== */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--color-text-primary);
+  font-weight: 800;
+  line-height: var(--lh-heading);
+  text-transform: uppercase; /* Gives titles an authoritative tech feel */
+  letter-spacing: 0.05em;     /* Expands letter spacing like spacecraft logos */
+  margin-bottom: 1rem;
+}
+
+h1 { 
+  font-size: var(--fs-h1); 
+  letter-spacing: 0.08em;
+}
+
+h2 { font-size: var(--fs-h2); }
+h3 { font-size: var(--fs-h3); }
+
+p {
+  font-size: var(--fs-p);
+  margin-bottom: 1rem;
+  color: var(--color-text-secondary);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition-smooth);
+}
+
+ul {
+  list-style: none;
+}
+
+/* ==========================================================================
+   5. Engineered Buttons
+   ========================================================================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.75rem;
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  line-height: 1;
+  border-radius: var(--radius-sm); /* Sleek, sharper edges for aerospace look */
+  border: 1px solid transparent;
+  cursor: pointer;
+  user-select: none;
+  white-space: nowrap;
+  transition: var(--transition-smooth);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+/* Primary Rocket Orange Button */
+.btn-primary {
+  background-color: var(--color-accent-primary);
+  color: var(--color-text-primary);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-accent-hover);
+  box-shadow: var(--shadow-glow);
+  transform: translateY(-2px);
+}
+
+/* Secondary / Dark Surface Button */
+.btn-secondary {
+  background-color: var(--color-bg-surface);
+  color: var(--color-text-primary);
+  border: 1px solid var(--border-light);
+}
+
+.btn-secondary:hover {
+  border-color: var(--color-accent-primary);
+  color: var(--color-text-primary);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Ghost / Outline Button */
+.btn-outline {
+  background-color: transparent;
+  color: var(--color-text-primary);
+  border: 1px solid var(--color-text-secondary);
+}
+
+.btn-outline:hover {
+  border-color: var(--color-accent-primary);
+  color: var(--color-accent-primary);
+  transform: translateY(-2px);
+}
+
+/* Button Size Modifier: Large */
+.btn-lg {
+  padding: 1.1rem 2.25rem;
+  font-size: 1.05rem;
+  border-radius: var(--radius-md);
+}

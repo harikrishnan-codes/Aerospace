@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 - Signal Lost | Aerospace Control</title>
+  <link rel="icon" href="./assets/bg remove.webp">
+  <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="root.css">
+  <link rel="stylesheet" href="error.css">
+</head>
+<body>
+
+  <main class="error-page">
+    <div class="container">
+      <div class="error-card">
+        
+        <!-- Technical HUD Status Bar -->
+        <div class="hud-status">
+          <span class="status-indicator"></span>
+          <span class="status-text">SYSTEM ERROR // CODE: 0x404_NOT_FOUND</span>
+        </div>
+
+        <!-- Hero Error Code -->
+        <div class="error-code-wrapper">
+          <h1 class="error-code" data-text="404">404</h1>
+        </div>
+
+        <!-- Mission Details -->
+        <div class="error-content">
+          <h2>Telemetry Signal Lost</h2>
+          <p>
+            The requested trajectory or orbital vector does not exist or has passed beyond our radar perimeter. Re-align your coordinates or return to ground control.
+          </p>
+
+          <!-- Action Control Buttons -->
+          <div class="error-actions">
+            <a href="/" class="btn btn-primary btn-lg">
+              <span>Return to Launchpad</span>
+            </a>
+            <a href="javascript:history.back()" class="btn btn-secondary btn-lg">
+              <span>Previous Vector</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Telemetry Metadata Footer -->
+        <div class="hud-telemetry">
+          <div class="telemetry-item">
+            <span class="label">LAT:</span> <span>0.00000°</span>
+          </div>
+          <div class="telemetry-item">
+            <span class="label">LONG:</span> <span>0.00000°</span>
+          </div>
+          <div class="telemetry-item">
+            <span class="label">STATUS:</span> <span class="highlight">ORBIT DIVERGENT</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+</body>
+</html>

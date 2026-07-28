@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spacly - Aerospace</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  
+
+  <link rel="stylesheet" href="root.css">
+  <link rel="icon" href="./assets/bg remove.webp">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header class="header" data-aos="fade-down">
+    <div class="container header-container">
+      <a href="index.html" class="logo">
+        <img src="./assets/orange.webp" alt="logo" width="150px" height="50px">
+      </a>
+
+      <nav class="nav-menu" id="navMenu">
+        <div class="mobile-nav-header">
+          <a href="index.html" class="logo">
+            <img src="./assets/orange.webp" alt="logo" width="150px" height="50px">
+          </a>
+        </div>
+
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="port.html" class="nav-link">Portfolio</a></li>
+          <li><a href="blog.html" class="nav-link">Blog</a></li>
+          <li><a href="event.html" class="nav-link">Events</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+
+        <div class="mobile-nav-footer">
+          <a href="auth.html" class="btn-join mobile-join-btn">Join Us</a>
+        </div>
+      </nav>
+
+      <div class="header-actions">
+        <a href="error.html" class="action-icon">
+          <i class="fa-solid fa-basket-shopping"></i>
+          <span class="cart-badge">0</span>
+        </a>
+        <!-- <button class="action-icon"><i class="fa-solid fa-magnifying-glass"></i></button> -->
+        <a href="auth.html" class="btn-join desktop-join-btn">Join Us</a>
+
+        <button class="hamburger" id="hamburgerBtn" aria-label="Toggle Menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+
+
+
+
+
+<!-- ==========================================================================
+   Aerospace Hero Section
+   ========================================================================== -->
+<section class="hero-aerospace">
+  <!-- Interactive Ambient Background -->
+  <div class="hero-bg-overlay"></div>
+  <div class="hero-grid-pattern"></div>
+  <div class="hero-radar-glow"></div>
+
+  <div class="container hero-container">
+    
+    <!-- Hero Left / Content Block -->
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        <span class="badge-text">NEXT-GEN PROPULSION // ORBITAL READY</span>
+      </div>
+
+      <h1 class="hero-title">
+        ENGINEERING THE <span class="text-gradient">FRONTIER</span> OF FLIGHT
+      </h1>
+
+      <p class="hero-description">
+        Pioneering autonomous satellite networks, hyper-efficient thermal shielding, and next-generation rocket propulsion systems built for deep-space missions and orbital logistics.
+      </p>
+
+      <!-- Primary Actions -->
+      <div class="hero-actions">
+        <a href="#explore" class="btn btn-primary btn-lg hero-btn">
+          <span>Launch Telemetry</span>
+          <svg class="btn-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#payload" class="btn btn-secondary btn-lg hero-btn">
+          <span>View Payloads</span>
+        </a>
+      </div>
+
+      <!-- Live Telemetry Readouts -->
+      <div class="hero-stats-grid">
+        <div class="stat-card">
+          <div class="stat-value">99.8<span class="stat-unit">%</span></div>
+          <div class="stat-label">Mission Success</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">12.4<span class="stat-unit"> Mach</span></div>
+          <div class="stat-label">Max Velocity</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">450<span class="stat-unit"> kN</span></div>
+          <div class="stat-label">Thrust Vector</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hero Right / Visual Radar Target Unit -->
+    <div class="hero-visual">
+      <div class="hud-target-ring">
+        <div class="radar-sweep"></div>
+        <div class="hud-core">
+          <div class="core-node"></div>
+          <span class="hud-readout">SYS // OPTIMAL</span>
+        </div>
+        
+        <!-- Target Marker Accents -->
+        <div class="hud-marker marker-tl">+</div>
+        <div class="hud-marker marker-tr">+</div>
+        <div class="hud-marker marker-bl">+</div>
+        <div class="hud-marker marker-br">+</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+
+<!-- ==========================================================================
+   Aerospace Payloads & Capabilities Section
+   ========================================================================== -->
+<section class="payloads-section" id="payload">
+  <div class="container">
+    
+    <!-- Section Heading Block -->
+    <div class="section-header">
+      <div class="header-badge">
+        <span class="badge-dot"></span>
+        <span class="badge-text">ORBITAL CAPABILITIES // ACTIVE FLEET</span>
+      </div>
+      <h2 class="section-title">
+        MISSION-READY <span class="text-gradient">PAYLOAD SYSTEMS</span>
+      </h2>
+      <p class="section-description">
+        Modular hardware modules engineered for high-altitude deployment, satellite servicing, and long-duration interplanetary missions.
+      </p>
+    </div>
+
+    <!-- Payloads Grid -->
+    <div class="payloads-grid">
+      
+      <!-- Card 1 -->
+      <div class="payload-card">
+        <div class="card-status">DEPLOYED</div>
+        <div class="card-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        </div>
+        <h3 class="card-title">Aero-Core Propulsion</h3>
+        <p class="card-text">
+          Next-generation ion thrusters providing extreme fuel efficiency for deep-space orbit adjustments and station keeping.
+        </p>
+        <div class="card-specs">
+          <div class="spec-item"><span class="spec-label">THRUST</span><span class="spec-val">120 mN</span></div>
+          <div class="spec-item"><span class="spec-label">I_SP</span><span class="spec-val">3,200 s</span></div>
+          <div class="spec-item"><span class="spec-label">POWER</span><span class="spec-val">2.5 kW</span></div>
+        </div>
+        <a href="#details-1" class="btn btn-outline btn-card">
+          <span>Telemetry Specs</span>
+        </a>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="payload-card active-card">
+        <div class="card-status status-active">ACTIVE MISSION</div>
+        <div class="card-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m4.93 4.93 4.24 4.24"/><path d="m14.83 9.17 4.24-4.24"/><path d="m14.83 14.83 4.24 4.24"/><path d="m9.17 14.83-4.24 4.24"/></svg>
+        </div>
+        <h3 class="card-title">Orbital Shielding</h3>
+        <p class="card-text">
+          Multi-layer ceramic thermal shields designed to withstand extreme atmospheric re-entry conditions up to 1,800°C.
+        </p>
+        <div class="card-specs">
+          <div class="spec-item"><span class="spec-label">TEMP MAX</span><span class="spec-val">1,800°C</span></div>
+          <div class="spec-item"><span class="spec-label">WEIGHT</span><span class="spec-val">420 kg</span></div>
+          <div class="spec-item"><span class="spec-label">RATING</span><span class="spec-val">Class-A</span></div>
+        </div>
+        <a href="#details-2" class="btn btn-primary btn-card">
+          <span>Launch Telemetry</span>
+        </a>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="payload-card">
+        <div class="card-status">STAGING</div>
+        <div class="card-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 20h20"/><path d="m5 16 7-13 7 13"/></svg>
+        </div>
+        <h3 class="card-title">Autonomous Array</h3>
+        <p class="card-text">
+          Self-deploying solar array matrices generating continuous auxiliary power with automated sun-tracking telemetry.
+        </p>
+        <div class="card-specs">
+          <div class="spec-item"><span class="spec-label">OUTPUT</span><span class="spec-val">15.4 kW</span></div>
+          <div class="spec-item"><span class="spec-label">EFFICIENCY</span><span class="spec-val">34.2%</span></div>
+          <div class="spec-item"><span class="spec-label">SPAN</span><span class="spec-val">12.8 m</span></div>
+        </div>
+        <a href="#details-3" class="btn btn-outline btn-card">
+          <span>Telemetry Specs</span>
+        </a>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+<!-- ==========================================================================
+   Mission Control & Live Telemetry Terminal Section
+   ========================================================================== -->
+<section class="terminal-section" id="telemetry">
+  <div class="container">
+    
+    <div class="terminal-grid">
+      
+      <!-- Left Info Block -->
+      <div class="terminal-info">
+        <div class="header-badge">
+          <span class="badge-dot"></span>
+          <span class="badge-text">LIVE TELEMETRY // STREAM 01</span>
+        </div>
+        <h2 class="section-title">
+          REAL-TIME <span class="text-gradient">MISSION CONTROL</span>
+        </h2>
+        <p class="section-description">
+          Monitor orbital vectors, atmospheric pressure differentials, and automated propulsion thruster health through our encrypted ground station link.
+        </p>
+
+        <!-- Command Buttons linking to error.html -->
+        <div class="terminal-actions">
+          <a href="error.html" class="btn btn-primary btn-lg">
+            <span>Connect Console</span>
+          </a>
+          <a href="error.html" class="btn btn-secondary btn-lg">
+            <span>Download Logs</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Right HUD Terminal Console Display -->
+      <div class="terminal-console">
+        
+        <!-- Terminal Header Bar -->
+        <div class="console-header">
+          <div class="console-dots">
+            <span class="dot dot-red"></span>
+            <span class="dot dot-yellow"></span>
+            <span class="dot dot-green"></span>
+          </div>
+          <span class="console-title">cmd://sat-link.aerospace.v2</span>
+          <a href="error.html" class="console-link-btn" title="Expand Terminal">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+          </a>
+        </div>
+
+        <!-- Terminal Output Screen -->
+        <div class="console-body">
+          <div class="console-line text-muted">[18:22:04] INITIALIZING ENCRYPTED HANDSHAKE...</div>
+          <div class="console-line text-success">[18:22:05] ORBITAL LINK ESTABLISHED (SAT-09)</div>
+          <div class="console-line">[18:22:06] VECTOR_ALTITUDE: 420.8 KM // VELOCITY: 7.66 KM/S</div>
+          <div class="console-line text-accent">[18:22:07] WARN: SOLAR FLARE RADIATION BOOST DETECTED</div>
+          <div class="console-line">[18:22:08] THERMAL_SHIELDING: ACTIVE (1,240°C NOMINAL)</div>
+          <div class="console-line text-success">[18:22:09] SYSTEM OPTIMAL // ALL THRUSTERS ONLINE</div>
+          <div class="console-line console-prompt">
+            <span class="prompt-symbol">></span> <span class="typing-cursor"></span>
+          </div>
+        </div>
+
+        <!-- Terminal Footer Quick Controls linking to error.html -->
+        <div class="console-footer">
+          <a href="error.html" class="hud-pill">
+            <span class="pill-label">LATENCY:</span> <span class="pill-val">12ms</span>
+          </a>
+          <a href="error.html" class="hud-pill">
+            <span class="pill-label">SIGNAL:</span> <span class="pill-val">99.4%</span>
+          </a>
+          <a href="error.html" class="hud-pill pill-action">
+            <span>FULL DIAGNOSTICS &rarr;</span>
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+
+
+<!-- ==========================================================================
+   Aerospace Specifications & System Diagnostics Matrix
+   ========================================================================== -->
+<section class="specs-section" id="specs">
+  <div class="container">
+    
+    <!-- Section Header Block -->
+    <div class="section-header">
+      <div class="header-badge">
+        <span class="badge-dot"></span>
+        <span class="badge-text">HARDWARE MATRIX // VERIFIED DIAGNOSTICS</span>
+      </div>
+      <h2 class="section-title">
+        PROPULSION & <span class="text-gradient">AVIONICS SPECS</span>
+      </h2>
+      <p class="section-description">
+        Comprehensive telemetry breakdown and operational tolerances for orbital deployment vehicles.
+      </p>
+    </div>
+
+    <!-- Interactive Specs Table / Matrix Layout -->
+    <div class="specs-card-wrapper">
+      
+      <!-- Top Diagnostic Bar -->
+      <div class="specs-toolbar">
+        <div class="toolbar-status">
+          <span class="status-dot"></span>
+          <span class="status-label">SYS_DIAGNOSTICS // ALL MODULES NOMINAL</span>
+        </div>
+        <a href="error.html" class="btn btn-outline btn-sm toolbar-btn">
+          <span>Export Spec Sheet</span>
+        </a>
+      </div>
+
+      <!-- Specs Data Grid -->
+      <div class="specs-table">
+        
+        <!-- Row 1 -->
+        <div class="specs-row">
+          <div class="spec-col spec-name">
+            <span class="spec-id">MOD-01</span>
+            <strong>Primary Propulsion Unit</strong>
+          </div>
+          <div class="spec-col spec-val">Dual Vacuum Rocket Thrusters</div>
+          <div class="spec-col spec-status">
+            <span class="status-tag status-online">ONLINE</span>
+          </div>
+          <div class="spec-col spec-action">
+            <a href="error.html" class="spec-link">View Logs &rarr;</a>
+          </div>
+        </div>
+
+        <!-- Row 2 -->
+        <div class="specs-row">
+          <div class="spec-col spec-name">
+            <span class="spec-id">MOD-02</span>
+            <strong>Avionics & Flight Computer</strong>
+          </div>
+          <div class="spec-col spec-val">Quad-Redundant Inertial Guidance</div>
+          <div class="spec-col spec-status">
+            <span class="status-tag status-online">ONLINE</span>
+          </div>
+          <div class="spec-col spec-action">
+            <a href="error.html" class="spec-link">View Logs &rarr;</a>
+          </div>
+        </div>
+
+        <!-- Row 3 -->
+        <div class="specs-row">
+          <div class="spec-col spec-name">
+            <span class="spec-id">MOD-03</span>
+            <strong>Thermal Protection Matrix</strong>
+          </div>
+          <div class="spec-col spec-val">Ablative Ceramic Composite</div>
+          <div class="spec-col spec-status">
+            <span class="status-tag status-standby">STANDBY</span>
+          </div>
+          <div class="spec-col spec-action">
+            <a href="error.html" class="spec-link">View Logs &rarr;</a>
+          </div>
+        </div>
+
+        <!-- Row 4 -->
+        <div class="specs-row">
+          <div class="spec-col spec-name">
+            <span class="spec-id">MOD-04</span>
+            <strong>Telemetry Encryption Grid</strong>
+          </div>
+          <div class="spec-col spec-val">Quantum-Resistant SATCOM Link</div>
+          <div class="spec-col spec-status">
+            <span class="status-tag status-online">ONLINE</span>
+          </div>
+          <div class="spec-col spec-action">
+            <a href="error.html" class="spec-link">View Logs &rarr;</a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Specs Footer Action Banner -->
+      <div class="specs-footer">
+        <p class="specs-footer-text">
+          Need detailed CAD models or payload integration integration guidelines?
+        </p>
+        <div class="specs-footer-actions">
+          <a href="error.html" class="btn btn-primary">
+            <span>Request Integration Kit</span>
+          </a>
+          <a href="error.html" class="btn btn-secondary">
+            <span>Access API Docs</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+
+<!-- ==========================================================================
+   Mission Launch & Deployment Timeline Section
+   ========================================================================== -->
+<section class="timeline-section" id="launch-schedule">
+  <div class="container">
+    
+    <!-- Section Header Block -->
+    <div class="section-header">
+      <div class="header-badge">
+        <span class="badge-dot"></span>
+        <span class="badge-text">LAUNCH MANIFEST // COUNTDOWN TIMELINE</span>
+      </div>
+      <h2 class="section-title">
+        UPCOMING <span class="text-gradient">MISSION ORBITS</span>
+      </h2>
+      <p class="section-description">
+        Scheduled orbital insertions, payload integrations, and deep-space trajectory deployments.
+      </p>
+    </div>
+
+    <!-- Timeline Wrapper -->
+    <div class="timeline-container">
+      
+      <!-- Item 1 -->
+      <div class="timeline-item">
+        <div class="timeline-marker">
+          <span class="marker-node"></span>
+        </div>
+        <div class="timeline-content">
+          <div class="timeline-meta">
+            <span class="mission-id">MISSION // ORBIT-X1</span>
+            <span class="mission-date">T-MINUS 14 DAYS</span>
+          </div>
+          <h3 class="timeline-title">Low Earth Orbit Payload Integration</h3>
+          <p class="timeline-text">
+            Final stage mounting of commercial satellite matrices into the primary fairing at Launch Complex 04.
+          </p>
+          <div class="timeline-actions">
+            <a href="error.html" class="btn btn-primary btn-sm">
+              <span>View Manifest</span>
+            </a>
+            <a href="error.html" class="btn btn-outline btn-sm">
+              <span>Livestream Stream</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 2 -->
+      <div class="timeline-item item-active">
+        <div class="timeline-marker">
+          <span class="marker-node active-node"></span>
+        </div>
+        <div class="timeline-content">
+          <div class="timeline-meta">
+            <span class="mission-id">MISSION // HELIOS-9</span>
+            <span class="mission-date">T-MINUS 42 DAYS</span>
+          </div>
+          <h3 class="timeline-title">Solar Trajectory Insertion</h3>
+          <p class="timeline-text">
+            High-altitude orbital maneuver utilizing ion thrust vectoring to align secondary scientific probes with heliospheric orbit.
+          </p>
+          <div class="timeline-actions">
+            <a href="error.html" class="btn btn-primary btn-sm">
+              <span>Trajectory Data</span>
+            </a>
+            <a href="error.html" class="btn btn-secondary btn-sm">
+              <span>Payload Specs</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 3 -->
+      <div class="timeline-item">
+        <div class="timeline-marker">
+          <span class="marker-node"></span>
+        </div>
+        <div class="timeline-content">
+          <div class="timeline-meta">
+            <span class="mission-id">MISSION // DEEP-AER0</span>
+            <span class="mission-date">Q4 SCHEDULED</span>
+          </div>
+          <h3 class="timeline-title">Lunar Resupply Logistics</h3>
+          <p class="timeline-text">
+            Autonomous resupply shuttle staging in geostationary transfer orbit prior to lunar flyby and orbital insertion.
+          </p>
+          <div class="timeline-actions">
+            <a href="error.html" class="btn btn-outline btn-sm">
+              <span>Reserve Slot</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Section CTA Banner -->
+    <div class="timeline-cta-banner">
+      <div class="cta-text">
+        <h3>Ready to book dedicated payload volume?</h3>
+        <p>Custom orbital slots available for government and private enterprise missions.</p>
+      </div>
+      <a href="error.html" class="btn btn-primary btn-lg">
+        <span>Reserve Launch Window</span>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+
+
+<!-- ==========================================================================
+   Aerospace Testimonials & Endorsements Section (Auto-Rotating)
+   ========================================================================== -->
+<section class="testimonials-section" id="testimonials">
+  <div class="container">
+    
+    <!-- Section Header Block -->
+    <div class="section-header">
+      <div class="header-badge">
+        <span class="badge-dot"></span>
+        <span class="badge-text">MISSION ENDORSEMENTS // PARTNER FEEDBACK</span>
+      </div>
+      <h2 class="section-title">
+        TRUSTED BY <span class="text-gradient">INDUSTRY LEADERS</span>
+      </h2>
+      <p class="section-description">
+        Feedback from commanders, aerospace engineers, and commercial satellite operators.
+      </p>
+    </div>
+
+    <!-- Auto-Sliding Carousel Wrapper -->
+    <div class="testimonial-slider">
+      
+      <!-- Hidden Radio Controls for CSS Auto-Rotation -->
+      <input type="radio" name="testimonial-slide" id="slide-1" checked>
+      <input type="radio" name="testimonial-slide" id="slide-2">
+      <input type="radio" name="testimonial-slide" id="slide-3">
+
+      <!-- Testimonials Container Track -->
+      <div class="testimonial-track">
+        
+        <!-- Card 1 -->
+        <div class="testimonial-card">
+          <div class="card-quote-icon">“</div>
+          <p class="testimonial-text">
+            The thermal shielding capabilities provided by this system exceeded our atmospheric re-entry parameters by 35%. Their launch telemetry accuracy made payload deployment entirely seamless.
+          </p>
+          <div class="client-profile">
+            <div class="client-avatar-wrapper">
+              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80" alt="Dr. Aris Thorne" class="client-avatar">
+              <span class="avatar-hud-ring"></span>
+            </div>
+            <div class="client-info">
+              <h3 class="client-name">Dr. Aris Thorne</h3>
+              <p class="client-role">Chief Flight Systems Engineer // Orbital-X</p>
+            </div>
+          </div>
+          <a href="error.html" class="btn btn-outline btn-sm testimonial-btn">
+            <span>Read Case Study</span>
+          </a>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="testimonial-card">
+          <div class="card-quote-icon">“</div>
+          <p class="testimonial-text">
+            Integrating their ion propulsion matrix into our low-Earth orbit satellite constellation cut our station-keeping fuel consumption in half. Outstanding engineering precision.
+          </p>
+          <div class="client-profile">
+            <div class="client-avatar-wrapper">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80" alt="Commander David Vance" class="client-avatar">
+              <span class="avatar-hud-ring"></span>
+            </div>
+            <div class="client-info">
+              <h3 class="client-name">Cmdr. David Vance</h3>
+              <p class="client-role">Payload Operations Lead // Helios Space</p>
+            </div>
+          </div>
+          <a href="error.html" class="btn btn-outline btn-sm testimonial-btn">
+            <span>Read Case Study</span>
+          </a>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="testimonial-card">
+          <div class="card-quote-icon">“</div>
+          <p class="testimonial-text">
+            Real-time telemetry stream integrity during launch staging was flawless. The encrypted ground control links provided total mission visibility when we needed it most.
+          </p>
+          <div class="client-profile">
+            <div class="client-avatar-wrapper">
+              <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=150&q=80" alt="Elena Rostova" class="client-avatar">
+              <span class="avatar-hud-ring"></span>
+            </div>
+            <div class="client-info">
+              <h3 class="client-name">Elena Rostova</h3>
+              <p class="client-role">VP of Avionics Infrastructure // DeepAero</p>
+            </div>
+          </div>
+          <a href="error.html" class="btn btn-outline btn-sm testimonial-btn">
+            <span>Read Case Study</span>
+          </a>
+        </div>
+
+      </div>
+
+      <!-- Navigation Dots (Active Indicators) -->
+      <div class="slider-nav">
+        <label for="slide-1" class="nav-dot"></label>
+        <label for="slide-2" class="nav-dot"></label>
+        <label for="slide-3" class="nav-dot"></label>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+
+<!-- ==========================================================================
+   Aerospace FAQ & Knowledge Base Section
+   ========================================================================== -->
+<section class="faq-section" id="faq">
+  <div class="container">
+    
+    <!-- Section Header Block -->
+    <div class="section-header">
+      <div class="header-badge">
+        <span class="badge-dot"></span>
+        <span class="badge-text">KNOWLEDGE BASE // FREQUENTLY ASKED</span>
+      </div>
+      <h2 class="section-title">
+        MISSION <span class="text-gradient">SYSTEMS FAQ</span>
+      </h2>
+      <p class="section-description">
+        Technical documentation, payload integration requirements, and orbital deployment protocols.
+      </p>
+    </div>
+
+    <div class="faq-layout">
+      
+      <!-- Category Selector Sidebar (Desktop HUD Design) -->
+      <div class="faq-categories">
+        <a href="error.html" class="category-btn active">
+          <span class="category-icon">01</span>
+          <span>Orbital Operations</span>
+        </a>
+        <a href="error.html" class="category-btn">
+          <span class="category-icon">02</span>
+          <span>Propulsion Specs</span>
+        </a>
+        <a href="error.html" class="category-btn">
+          <span class="category-icon">03</span>
+          <span>Payload Mounting</span>
+        </a>
+        <a href="error.html" class="category-btn">
+          <span class="category-icon">04</span>
+          <span>Security & SATCOM</span>
+        </a>
+
+        <!-- Quick Help HUD Box linking to error.html -->
+        <div class="faq-support-card">
+          <div class="support-status">
+            <span class="status-indicator"></span>
+            <span>GROUND SUPPORT ONLINE</span>
+          </div>
+          <p>Have custom mission trajectories or urgent payload needs?</p>
+          <a href="error.html" class="btn btn-primary btn-sm">
+            <span>Contact Flight Command</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- FAQ Accordion List -->
+      <div class="faq-accordion-container">
+        
+        <!-- Accordion Item 1 -->
+        <details class="faq-item" open>
+          <summary class="faq-question">
+            <span class="question-meta">SYS_01 //</span>
+            <span class="question-text">What payload volumes can your fairing accommodate?</span>
+            <span class="accordion-icon">+</span>
+          </summary>
+          <div class="faq-answer">
+            <p>
+              Our standard fairing accommodates payloads up to 4.5 meters in diameter and 12 meters in length. Custom multi-satellite dispenser rings are available for Rideshare deployments.
+            </p>
+            <a href="error.html" class="faq-link">Download Fairing CAD Model &rarr;</a>
+          </div>
+        </details>
+
+        <!-- Accordion Item 2 -->
+        <details class="faq-item">
+          <summary class="faq-question">
+            <span class="question-meta">SYS_02 //</span>
+            <span class="question-text">How does the automatic thermal shielding system activate?</span>
+            <span class="accordion-icon">+</span>
+          </summary>
+          <div class="faq-answer">
+            <p>
+              Thermal protection is managed autonomously by onboard avionics. High-density ceramic ablative shields engage based on real-time atmospheric density and re-entry velocity sensors.
+            </p>
+            <a href="error.html" class="faq-link">Read Thermal Shielding Specs &rarr;</a>
+          </div>
+        </details>
+
+        <!-- Accordion Item 3 -->
+        <details class="faq-item">
+          <summary class="faq-question">
+            <span class="question-meta">SYS_03 //</span>
+            <span class="question-text">What encryption standards protect live telemetry links?</span>
+            <span class="accordion-icon">+</span>
+          </summary>
+          <div class="faq-answer">
+            <p>
+              All telemetry downlinks use quantum-resistant AES-256 GCM encryption protocols paired with multi-axis ground terminal handshakes to ensure total signal integrity.
+            </p>
+            <a href="error.html" class="faq-link">Access SATCOM Encryption Whitepaper &rarr;</a>
+          </div>
+        </details>
+
+        <!-- Accordion Item 4 -->
+        <details class="faq-item">
+          <summary class="faq-question">
+            <span class="question-meta">SYS_04 //</span>
+            <span class="question-text">What is the typical lead time for a dedicated orbital launch?</span>
+            <span class="accordion-icon">+</span>
+          </summary>
+          <div class="faq-answer">
+            <p>
+              Standard lead time for dedicated missions is 6 to 9 months from payload certification. Express launch slots are available for emergency satellite replacement missions within 60 days.
+            </p>
+            <a href="error.html" class="faq-link">View Express Staging Schedule &rarr;</a>
+          </div>
+        </details>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+
+
+<!-- ==========================================================================
+   Aerospace Flight Command Call to Action (CTA) Section
+   ========================================================================== -->
+<section class="cta-section" id="launch-control">
+  <div class="container">
+    
+    <div class="cta-card">
+      
+      <!-- Ambient Radar Backlight & Grid Overlay -->
+      <div class="cta-bg-glow"></div>
+      <div class="cta-grid-overlay"></div>
+
+      <!-- Content Container -->
+      <div class="cta-content">
+        
+        <!-- Status Indicator -->
+        <div class="cta-status">
+          <span class="status-beacon"></span>
+          <span class="status-label">ORBITAL WINDOW OPEN // LAUNCH SLOTS AVAILABLE</span>
+        </div>
+
+        <h2 class="cta-title">
+          READY TO SECURE YOUR <span class="text-gradient">ORBITAL TRAJECTORY?</span>
+        </h2>
+
+        <p class="cta-description">
+          Partner with our mission engineers to configure dedicated payload capacity, customize flight telemetry schedules, and deploy next-generation satellite assets.
+        </p>
+
+        <!-- Command Button Actions pointing to error.html -->
+        <div class="cta-actions">
+          <a href="error.html" class="btn btn-primary btn-lg cta-btn">
+            <span>Initialize Mission Launch</span>
+            <svg class="btn-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="error.html" class="btn btn-secondary btn-lg cta-btn">
+            <span>Schedule Flight Consultation</span>
+          </a>
+        </div>
+
+        <!-- Telemetry Metadata Bar linking to error.html -->
+        <div class="cta-telemetry">
+          <a href="error.html" class="telemetry-node">
+            <span class="node-label">SECURE LINK:</span>
+            <span class="node-val">256-BIT AES GCM</span>
+          </a>
+          <a href="error.html" class="telemetry-node">
+            <span class="node-label">LAUNCH COMPLEX:</span>
+            <span class="node-val">LC-04 ACTIVE</span>
+          </a>
+          <a href="error.html" class="telemetry-node">
+            <span class="node-label">STAGING LATENCY:</span>
+            <span class="node-val">&lt; 15 MINS</span>
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+
+  <footer class="footer" data-aos="fade-up">
+    <div class="container">
+      <div class="footer-grid">
+
+        <div class="footer-col-about">
+          <a href="index.html" class="logo">
+            <img src="./assets/orange.webp" alt="logo" width="150px" height="50px">
+
+          </a>
+          <p>Architecting next-generation orbital platforms, rocket propulsion systems, and commercial space exploration
+            engines.</p>
+          <div class="social-links">
+            <a href="error.html"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="error.html"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="error.html"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col-links">
+          <h4>Navigation</h4>
+          <ul class="footer-menu">
+            <li><a href="index.html" class="footer-link">Home</a></li>
+            <li><a href="port.html" class="footer-link">Portfolio</a></li>
+            <li><a href="blog.html" class="footer-link">Blog</a></li>
+            <li><a href="event.html" class="footer-link">Events</a></li>
+            <li><a href="contact.html" class="footer-link">Contact</a></li>
+            <li><a href="auth.html" class="footer-link">Log In</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col-links">
+          <h4>Company</h4>
+          <ul class="footer-menu">
+            <li><a href="error.html" class="footer-link">Shop</a></li>
+            <li><a href="error.html" class="footer-link">Pages</a></li>
+            <li><a href="error.html" class="footer-link">Privacy Policy</a></li>
+            <li><a href="error.html" class="footer-link">Terms of Service</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col-newsletter">
+          <h4>Telemetry Updates</h4>
+          <p class="newsletter-desc">Subscribe to our newsletter for latest rocket launches and mission telemetry.</p>
+          <form class="newsletter-form" action="error.html" method="GET">
+            <input type="email" placeholder="Enter your work email..." class="newsletter-input" required>
+            <button type="submit" class="btn-join btn-submit">Subscribe</button>
+          </form>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Spacly Aerospace Tech Inc. All rights reserved.</p>
+        <p>Engineered for deep space systems.</p>
+      </div>
+    </div>
+  </footer>
+
+<!-- Add right before closing </body> -->
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 800,
+    easing: 'cubic-bezier(0.16, 1, 0.3, 1)',
+    once: true,
+    offset: 50
+  });
+</script>  <script src="script.js"></script>
+</body>
+
+</html>

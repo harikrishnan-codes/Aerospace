@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spacly - Aerospace</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+  <link rel="stylesheet" href="root.css">
+  <link rel="stylesheet" href="event.css">
+  <link rel="icon" href="./assets/bg remove.webp">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header class="header" data-aos="fade-down">
+    <div class="container header-container">
+      <a href="index.html" class="logo">
+        <img src="./assets/orange.webp" alt="logo" width="150px" height="50px">
+      </a>
+
+      <nav class="nav-menu" id="navMenu">
+        <div class="mobile-nav-header">
+          <a href="index.html" class="logo">
+            <img src="./assets/orange.webp" alt="logo" width="150px" height="50px">
+          </a>
+        </div>
+
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="port.html" class="nav-link">Portfolio</a></li>
+          <li><a href="blog.html" class="nav-link">Blog</a></li>
+          <li><a href="event.html" class="nav-link">Events</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+
+        <div class="mobile-nav-footer">
+          <a href="auth.html" class="btn-join mobile-join-btn">Join Us</a>
+        </div>
+      </nav>
+
+      <div class="header-actions">
+        <a href="error.html" class="action-icon">
+          <i class="fa-solid fa-basket-shopping"></i>
+          <span class="cart-badge">0</span>
+        </a>
+        <!-- <button class="action-icon"><i class="fa-solid fa-magnifying-glass"></i></button> -->
+        <a href="auth.html" class="btn-join desktop-join-btn">Join Us</a>
+
+        <button class="hamburger" id="hamburgerBtn" aria-label="Toggle Menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+
+
+
+
+
+  <!-- ==========================================================================
+   Aerospace Events & Launch Summits Intro Section
+   ========================================================================== -->
+  <section class="events-hero">
+    <!-- Interactive Ambient Layering -->
+    <div class="events-hero-overlay"></div>
+    <div class="events-grid-pattern"></div>
+    <div class="events-radar-glow"></div>
+
+    <div class="container">
+      <div class="events-hero-content" data-aos="fade-down">
+
+        <!-- Top Status Badge -->
+        <div class="hero-badge">
+          <span class="badge-dot"></span>
+          <span class="badge-text">ANNUAL SUMMITS // ORBITAL SCHEDULE 2026-2027</span>
+        </div>
+
+        <h1 class="hero-title">
+          AEROSPACE & LAUNCH <span class="text-gradient">EVENTS</span>
+        </h1>
+
+        <p class="hero-description">
+          Connect with flight engineers, satellite operators, and deep-space mission commanders at our upcoming global
+          summits, livestreamed launch countdowns, and technical briefings.
+        </p>
+
+        <!-- Event Quick Action Bar linking to error.html -->
+        <div class="events-actions" data-aos="fade-up" data-aos-delay="100">
+          <a href="error.html" class="btn btn-primary btn-lg">
+            <span>Reserve Pass</span>
+            <svg class="btn-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </a>
+          <a href="error.html" class="btn btn-secondary btn-lg">
+            <span>Download 2026 Schedule</span>
+          </a>
+        </div>
+
+        <!-- Quick Category Filter Bar linking to error.html -->
+        <div class="events-topics" data-aos="fade-up" data-aos-delay="200">
+          <a href="error.html" class="topic-pill active">All Events</a>
+          <a href="error.html" class="topic-pill">Launch Summits</a>
+          <a href="error.html" class="topic-pill">Livestreams</a>
+          <a href="error.html" class="topic-pill">Technical Briefings</a>
+          <a href="error.html" class="topic-pill">Expos</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+  <!-- ==========================================================================
+   Featured Global Aerospace Summit & Live Countdown Module
+   ========================================================================== -->
+  <section class="featured-event-section" id="featured-summit">
+    <div class="container">
+
+      <!-- Section Header Block -->
+      <div class="section-header" data-aos="fade-down">
+        <div class="header-badge">
+          <span class="badge-dot"></span>
+          <span class="badge-text">FLAGSHIP EVENT // LAUNCH COMPLEX 04</span>
+        </div>
+        <h2 class="section-title">
+          GLOBAL ORBITAL <span class="text-gradient">SUMMIT 2026</span>
+        </h2>
+        <p class="section-description">
+          Keynote technical sessions, autonomous fairing separation showcases, and direct flight command networking.
+        </p>
+      </div>
+
+      <!-- Featured Event Glassmorphism Command Panel -->
+      <div class="featured-event-card" data-aos="fade-up" data-aos-delay="100">
+
+        <!-- Ambient Visual Glow & Grid -->
+        <div class="card-glow-bg"></div>
+        <div class="card-grid-texture"></div>
+
+        <!-- Main Event Details Body -->
+        <div class="event-main-content">
+
+          <!-- Left Column: Event Metadata & Narrative -->
+          <div class="event-info">
+            <div class="event-status-pill">
+              <span class="pulse-beacon"></span>
+              <span>REGISTRATION OPEN // LIMITED PASSES</span>
+            </div>
+
+            <h3 class="event-headline">International Space Propulsion & Orbital Logistics Conference</h3>
+
+            <p class="event-excerpt">
+              Join lead avionics engineers and flight commanders at Cape Canaveral or via encrypted global 4K stream for
+              three days of breakthrough propulsion research and live rocket engine staging demonstrations.
+            </p>
+
+            <div class="event-venue-strip">
+              <div class="venue-node">
+                <span class="node-label">LOCATION:</span>
+                <span class="node-val">KENNEDY SPACE CENTER, FL</span>
+              </div>
+              <div class="venue-node">
+                <span class="node-label">DATE:</span>
+                <span class="node-val">SEPTEMBER 14-16, 2026</span>
+              </div>
+              <div class="venue-node">
+                <span class="node-label">ACCESS:</span>
+                <span class="node-val">IN-PERSON + LIVESTREAM</span>
+              </div>
+            </div>
+
+            <div class="event-actions">
+              <a href="error.html" class="btn btn-primary btn-lg">
+                <span>Secure Command Pass</span>
+                <svg class="btn-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </a>
+              <a href="error.html" class="btn btn-secondary btn-lg">
+                <span>View Summit Agenda</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Right Column: Live Staging Countdown HUD Clock -->
+          <div class="event-countdown-hud">
+            <div class="hud-timer-header">
+              <span class="hud-code">T-MINUS COUNTDOWN</span>
+              <span class="hud-status">STAGING ACTIVE</span>
+            </div>
+
+            <div class="countdown-digits">
+              <div class="time-block">
+                <span class="time-num">48</span>
+                <span class="time-lbl">DAYS</span>
+              </div>
+              <span class="time-colon">:</span>
+              <div class="time-block">
+                <span class="time-num">14</span>
+                <span class="time-lbl">HOURS</span>
+              </div>
+              <span class="time-colon">:</span>
+              <div class="time-block">
+                <span class="time-num">22</span>
+                <span class="time-lbl">MINS</span>
+              </div>
+              <span class="time-colon">:</span>
+              <div class="time-block">
+                <span class="time-num">08</span>
+                <span class="time-lbl">SECS</span>
+              </div>
+            </div>
+
+            <div class="hud-footer-tag">
+              <span class="tag-lbl">EXPECTED ATTENDEES:</span>
+              <span class="tag-val">2,500+ FLIGHT ENGINEERS</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+  <!-- ==========================================================================
+   Upcoming Events & Keynote Agenda Schedule Section
+   ========================================================================== -->
+  <section class="schedule-section" id="upcoming-schedule">
+    <div class="container">
+
+      <!-- Section Header Block -->
+      <div class="section-header" data-aos="fade-down">
+        <div class="header-badge">
+          <span class="badge-dot"></span>
+          <span class="badge-text">2026-2027 SCHEDULE // MISSION MANIFEST</span>
+        </div>
+        <h2 class="section-title">
+          UPCOMING <span class="text-gradient">KEYNOTES & SUMMITS</span>
+        </h2>
+        <p class="section-description">
+          Reserve your seat or stream access for upcoming technical briefings, live rocket engine firings, and avionics
+          masterclasses.
+        </p>
+      </div>
+
+      <!-- Timeline Schedule List -->
+      <div class="schedule-timeline" data-aos="fade-up" data-aos-delay="100">
+
+        <!-- Event Schedule Row 1 -->
+        <div class="timeline-row">
+          <div class="date-badge-box">
+            <span class="date-day">18</span>
+            <span class="date-month">AUG 2026</span>
+          </div>
+
+          <div class="event-details">
+            <div class="event-meta">
+              <span class="meta-tag tag-primary">LIVESTREAM</span>
+              <span class="meta-time">14:00 UTC // DURATION: 2.5 HRS</span>
+            </div>
+            <h3 class="event-title">Deep Space Ion Propulsion & Trajectory Optimization</h3>
+            <p class="event-desc">
+              Technical breakdown of dual-stage ion thruster telemetry recorded during high-altitude orbital insertion
+              tests.
+            </p>
+            <div class="speaker-pill">
+              <span class="speaker-role">SPEAKER:</span>
+              <span class="speaker-name">Dr. Vance Sterling (Chief Physicist)</span>
+            </div>
+          </div>
+
+          <div class="event-action">
+            <a href="error.html" class="btn btn-outline btn-sm">
+              <span>Register Livestream &rarr;</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Event Schedule Row 2 -->
+        <div class="timeline-row">
+          <div class="date-badge-box">
+            <span class="date-day">29</span>
+            <span class="date-month">SEP 2026</span>
+          </div>
+
+          <div class="event-details">
+            <div class="event-meta">
+              <span class="meta-tag tag-accent">EXPO & SUMMIT</span>
+              <span class="meta-time">09:00 EST // CAPE CANAVERAL</span>
+            </div>
+            <h3 class="event-title">Commercial Satellite Payload Fairing Integration Workshop</h3>
+            <p class="event-desc">
+              On-site technical briefing covering cleanroom preparation, multi-axis dispenser ring mounting, and
+              acoustic testing.
+            </p>
+            <div class="speaker-pill">
+              <span class="speaker-role">SPEAKER:</span>
+              <span class="speaker-name">Elena Rostova (Lead Staging Director)</span>
+            </div>
+          </div>
+
+          <div class="event-action">
+            <a href="error.html" class="btn btn-primary btn-sm">
+              <span>Book Venue Ticket &rarr;</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Event Schedule Row 3 -->
+        <div class="timeline-row">
+          <div class="date-badge-box">
+            <span class="date-day">12</span>
+            <span class="date-month">OCT 2026</span>
+          </div>
+
+          <div class="event-details">
+            <div class="event-meta">
+              <span class="meta-tag tag-primary">TECHNICAL BRIEFING</span>
+              <span class="meta-time">16:30 UTC // ENCRYPTED LINK</span>
+            </div>
+            <h3 class="event-title">Quantum-Resistant SatCom Protocol Deployment</h3>
+            <p class="event-desc">
+              Evaluating lattice-based cryptography standards for LEO broadband relay constellations under hostile
+              interception risks.
+            </p>
+            <div class="speaker-pill">
+              <span class="speaker-role">SPEAKER:</span>
+              <span class="speaker-name">Marcus Thorne (Avionics Lead)</span>
+            </div>
+          </div>
+
+          <div class="event-action">
+            <a href="error.html" class="btn btn-outline btn-sm">
+              <span>Request Pass &rarr;</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Timeline Footer Actions -->
+      <div class="schedule-footer" data-aos="fade-up">
+        <p>Need to host a private launch briefing or corporate payload presentation?</p>
+        <a href="error.html" class="btn btn-secondary btn-sm">
+          <span>Request Private Briefing</span>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+
+
+
+
+
+
+  <!-- ==========================================================================
+   Virtual Attendance Command Console & Global Livestream Section
+   ========================================================================== -->
+  <section class="livestream-section" id="virtual-command">
+    <div class="container">
+
+      <!-- Section Header Block -->
+      <div class="section-header" data-aos="fade-down">
+        <div class="header-badge">
+          <span class="badge-dot"></span>
+          <span class="badge-text">GLOBAL BROADCAST // VIRTUAL ATTENDANCE</span>
+        </div>
+        <h2 class="section-title">
+          ENCRYPTED <span class="text-gradient">LIVESTREAM COMMAND</span>
+        </h2>
+        <p class="section-description">
+          Access real-time 4K multi-angle feeds, live flight physics telemetry overlays, and interactive Q&A channels
+          from anywhere on Earth.
+        </p>
+      </div>
+
+      <!-- Main Livestream Console Strip -->
+      <div class="livestream-console" data-aos="fade-up" data-aos-delay="100">
+
+        <!-- Top HUD Control Bar -->
+        <div class="console-top-bar">
+          <div class="bar-left">
+            <span class="beacon-dot"></span>
+            <span class="stream-status">STREAM_STATUS // 4K BROADCAST READY</span>
+          </div>
+          <div class="bar-right">
+            <span class="sat-id">SATCOM NODE // BAND-KA #04</span>
+          </div>
+        </div>
+
+        <!-- Console Body Grid -->
+        <div class="console-body">
+
+          <!-- Left Visual Feed Display -->
+          <div class="stream-viewport">
+            <img src="https://images.unsplash.com/photo-1517976487492-5750f3195933?auto=format&fit=crop&w=1000&q=80"
+              alt="Livestream Command Feed" class="viewport-img">
+            <div class="viewport-overlay">
+              <span class="cam-tag">CAM_01 // STAGING PAD</span>
+              <a href="error.html" class="viewport-play-btn">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+              </a>
+              <span class="resolution-tag">2160p 60FPS</span>
+            </div>
+          </div>
+
+          <!-- Right Console Telemetry & Access Specs -->
+          <div class="stream-details">
+            <h3 class="stream-headline">Virtual Access Pass Parameters</h3>
+            <p class="stream-desc">
+              Virtual delegates receive encrypted access keys for private audio channels, high-definition telemetry
+              pipelines, and downloadable CAD event assets.
+            </p>
+
+            <!-- Telemetry Specs Bar -->
+            <div class="stream-spec-grid">
+              <div class="spec-node">
+                <span class="spec-lbl">AUDIO FEED:</span>
+                <span class="spec-val">UNCOMPRESSED PRO</span>
+              </div>
+              <div class="spec-node">
+                <span class="spec-lbl">LATENCY:</span>
+                <span class="spec-val">&lt; 120ms GLOBAL</span>
+              </div>
+              <div class="spec-node">
+                <span class="spec-lbl">CHANNELS:</span>
+                <span class="spec-val">4 MULTI-CAM</span>
+              </div>
+              <div class="spec-node">
+                <span class="spec-lbl">ENCRYPTION:</span>
+                <span class="spec-val">AES 256-BIT</span>
+              </div>
+            </div>
+
+            <!-- Actions pointing to error.html -->
+            <div class="stream-actions">
+              <a href="error.html" class="btn btn-primary btn-lg">
+                <span>Claim Virtual Key</span>
+                <svg class="btn-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </a>
+              <a href="error.html" class="btn btn-secondary btn-lg">
+                <span>Test Stream Bandwidth</span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+  <!-- ==========================================================================
+   Aerospace Keynote Speakers & Command Panelists (Drawer List Layout)
+   ========================================================================== -->
+  <section class="speakers-section" id="keynote-panelists">
+    <div class="container">
+
+      <!-- Section Header Block -->
+      <div class="section-header" data-aos="fade-down">
+        <div class="header-badge">
+          <span class="badge-dot"></span>
+          <span class="badge-text">COMMAND FACULTY // KEYNOTE PANELISTS</span>
+        </div>
+        <h2 class="section-title">
+          FLIGHT COMMAND <span class="text-gradient">SPEAKERS</span>
+        </h2>
+        <p class="section-description">
+          Hear directly from chief propulsion physicists, satellite network architects, and orbital staging directors.
+        </p>
+      </div>
+
+      <!-- Speaker Console List -->
+      <div class="speakers-console" data-aos="fade-up" data-aos-delay="100">
+
+        <!-- Speaker Row 1 -->
+        <div class="speaker-drawer-item active">
+          <div class="drawer-header">
+            <div class="speaker-meta-code">PANELIST // 01</div>
+            <div class="speaker-identity">
+              <h3 class="speaker-name">Dr. Vance Sterling</h3>
+              <span class="speaker-role">Chief Flight Physicist // Orbital Propulsion</span>
+            </div>
+            <div class="speaker-topic-badge">DUAL-BURN ION THRUSTERS</div>
+            <a href="error.html" class="drawer-toggle-btn">
+              <span>Profile Specs &rarr;</span>
+            </a>
+          </div>
+
+          <div class="drawer-body">
+            <div class="drawer-portrait">
+              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80"
+                alt="Dr. Vance Sterling" class="portrait-img">
+              <div class="portrait-hud-tag">SPEAKER_ID // 0x88F</div>
+            </div>
+            <div class="drawer-bio">
+              <p class="bio-text">
+                Pioneered low-thrust trajectory optimization routines for deep-space resupply modules. Over 15 years
+                leading vacuum-firing tests at Launch Complex 04.
+              </p>
+              <div class="speaker-keynote-strip">
+                <span class="keynote-lbl">KEYNOTE SESSION:</span>
+                <span class="keynote-val">"Next-Gen Ion Propulsion Telemetry Analysis"</span>
+              </div>
+              <a href="error.html" class="btn btn-primary btn-sm">
+                <span>View Speaker Abstract</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Speaker Row 2 -->
+        <div class="speaker-drawer-item">
+          <div class="drawer-header">
+            <div class="speaker-meta-code">PANELIST // 02</div>
+            <div class="speaker-identity">
+              <h3 class="speaker-name">Elena Rostova</h3>
+              <span class="speaker-role">Lead Staging Director // Launch Operations</span>
+            </div>
+            <div class="speaker-topic-badge">CLEANROOM INTEGRATION</div>
+            <a href="error.html" class="drawer-toggle-btn">
+              <span>Profile Specs &rarr;</span>
+            </a>
+          </div>
+
+          <div class="drawer-body">
+            <div class="drawer-portrait">
+              <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80"
+                alt="Elena Rostova" class="portrait-img">
+              <div class="portrait-hud-tag">SPEAKER_ID // 0x42B</div>
+            </div>
+            <div class="drawer-bio">
+              <p class="bio-text">
+                Directs Class-10,000 cleanroom intake routines and fairing encapsulation sequences for commercial
+                satellite constellations.
+              </p>
+              <div class="speaker-keynote-strip">
+                <span class="keynote-lbl">KEYNOTE SESSION:</span>
+                <span class="keynote-val">"Payload Adapter Mounting & Acoustic Testing"</span>
+              </div>
+              <a href="error.html" class="btn btn-outline btn-sm">
+                <span>View Speaker Abstract</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Speaker Row 3 -->
+        <div class="speaker-drawer-item">
+          <div class="drawer-header">
+            <div class="speaker-meta-code">PANELIST // 03</div>
+            <div class="speaker-identity">
+              <h3 class="speaker-name">Marcus Thorne</h3>
+              <span class="speaker-role">Avionics Security Lead // SATCOM</span>
+            </div>
+            <div class="speaker-topic-badge">QUANTUM ENCRYPTION</div>
+            <a href="error.html" class="drawer-toggle-btn">
+              <span>Profile Specs &rarr;</span>
+            </a>
+          </div>
+
+          <div class="drawer-body">
+            <div class="drawer-portrait">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80"
+                alt="Marcus Thorne" class="portrait-img">
+              <div class="portrait-hud-tag">SPEAKER_ID // 0x91C</div>
+            </div>
+            <div class="drawer-bio">
+              <p class="bio-text">
+                Architect of lattice-based cryptography protocols protecting multi-band orbital telemetry downlinks from
+                ground interception.
+              </p>
+              <div class="speaker-keynote-strip">
+                <span class="keynote-lbl">KEYNOTE SESSION:</span>
+                <span class="keynote-val">"Post-Quantum Band-X Telemetry Security"</span>
+              </div>
+              <a href="error.html" class="btn btn-outline btn-sm">
+                <span>View Speaker Abstract</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+
+
+
+
+
+  <!-- ==========================================================================
+   Aerospace Events Call To Action (CTA) Banner
+   ========================================================================== -->
+  <section class="events-cta-section" id="events-cta">
+    <div class="container">
+
+      <div class="events-cta-box" data-aos="zoom-in">
+
+        <!-- Atmospheric Background Glows -->
+        <div class="cta-glow-element"></div>
+        <div class="cta-grid-overlay"></div>
+
+        <!-- Main CTA Content -->
+        <div class="cta-inner-content">
+
+          <!-- Top Status Tag -->
+          <div class="cta-status-badge">
+            <span class="status-dot"></span>
+            <span class="status-lbl">COMMAND CLEARANCE // FINAL STAGING</span>
+          </div>
+
+          <h2 class="cta-title">
+            READY TO JOIN THE <span class="text-gradient">NEXT MISSION?</span>
+          </h2>
+
+          <p class="cta-description">
+            Secure your in-person delegate pass or high-bandwidth virtual access key for upcoming global aerospace
+            summits and rocket staging keynotes.
+          </p>
+
+          <!-- Primary Action Buttons linking to error.html -->
+          <div class="cta-button-group">
+            <a href="error.html" class="btn btn-primary btn-lg">
+              <span>Register for Summit</span>
+              <svg class="btn-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </a>
+            <a href="error.html" class="btn btn-secondary btn-lg">
+              <span>Contact Event Operations</span>
+            </a>
+          </div>
+
+          <!-- Live Telemetry Footer Bar -->
+          <div class="cta-telemetry-bar">
+            <div class="telemetry-node">
+              <span class="t-lbl">AVAILABILITY:</span>
+              <span class="t-val text-success">LIMITED SEATS</span>
+            </div>
+            <span class="t-divider">//</span>
+            <div class="telemetry-node">
+              <span class="t-lbl">ENCRYPTION:</span>
+              <span class="t-val">AES 256-BIT</span>
+            </div>
+            <span class="t-divider">//</span>
+            <div class="telemetry-node">
+              <span class="t-lbl">VENUE:</span>
+              <span class="t-val">LC-04 & GLOBAL 4K</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+
+
+
+
+  <footer class="footer" data-aos="fade-up">
+    <div class="container">
+      <div class="footer-grid">
+
+        <div class="footer-col-about">
+          <a href="index.html" class="logo">
+            <img src="./assets/orange.webp" alt="logo" width="150px" height="50px">
+
+          </a>
+          <p>Architecting next-generation orbital platforms, rocket propulsion systems, and commercial space exploration
+            engines.</p>
+          <div class="social-links">
+            <a href="error.html"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="error.html"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="error.html"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col-links">
+          <h4>Navigation</h4>
+          <ul class="footer-menu">
+            <li><a href="index.html" class="footer-link">Home</a></li>
+            <li><a href="port.html" class="footer-link">Portfolio</a></li>
+            <li><a href="blog.html" class="footer-link">Blog</a></li>
+            <li><a href="event.html" class="footer-link">Events</a></li>
+            <li><a href="contact.html" class="footer-link">Contact</a></li>
+            <li><a href="auth.html" class="footer-link">Log In</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col-links">
+          <h4>Company</h4>
+          <ul class="footer-menu">
+            <li><a href="error.html" class="footer-link">Shop</a></li>
+            <li><a href="error.html" class="footer-link">Pages</a></li>
+            <li><a href="error.html" class="footer-link">Privacy Policy</a></li>
+            <li><a href="error.html" class="footer-link">Terms of Service</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col-newsletter">
+          <h4>Telemetry Updates</h4>
+          <p class="newsletter-desc">Subscribe to our newsletter for latest rocket launches and mission telemetry.</p>
+          <form class="newsletter-form" action="error.html" method="GET">
+            <input type="email" placeholder="Enter your work email..." class="newsletter-input" required>
+            <button type="submit" class="btn-join btn-submit">Subscribe</button>
+          </form>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Spacly Aerospace Tech Inc. All rights reserved.</p>
+        <p>Engineered for deep space systems.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>

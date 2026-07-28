@@ -1,0 +1,1255 @@
+/* ==========================================================================
+   Contact Page Hero / Intro Section Styles
+   ========================================================================== */
+
+.contact-hero {
+  position: relative;
+  padding: calc(var(--navbar-height, 80px) + 3.5rem) 0 4.5rem 0;
+  background-color: var(--color-bg-main, #0b0d13);
+  border-bottom: 1px solid var(--border-light, rgba(255, 255, 255, 0.12));
+  overflow: hidden;
+}
+
+/* Background Layers */
+.contact-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 30%, rgba(20, 24, 36, 0.95) 0%, var(--color-bg-main, #0b0d13) 85%);
+  z-index: 1;
+}
+
+.contact-grid-pattern {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(var(--border-light, rgba(255, 255, 255, 0.12)) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border-light, rgba(255, 255, 255, 0.12)) 1px, transparent 1px);
+  background-size: 50px 50px;
+  opacity: 0.1;
+  mask-image: radial-gradient(circle at center, black 35%, transparent 85%);
+  z-index: 1;
+}
+
+.contact-hero-glow {
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, var(--color-accent-glow, rgba(240, 62, 30, 0.35)) 0%, transparent 70%);
+  filter: blur(85px);
+  opacity: 0.45;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Hero Content Box */
+.contact-hero .container {
+  position: relative;
+  z-index: 2;
+}
+
+.contact-hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.85rem;
+  background: rgba(20, 24, 36, 0.85);
+  border: 1px solid var(--border-light, rgba(255, 255, 255, 0.12));
+  border-radius: var(--radius-full, 9999px);
+  font-family: var(--font-heading);
+  font-size: 0.68rem;
+  margin-bottom: 1.25rem;
+}
+
+.badge-dot {
+  width: 6px;
+  height: 6px;
+  background: #67c23a;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #67c23a;
+}
+
+.badge-text {
+  color: var(--color-text-secondary, #9aa2b1);
+  letter-spacing: 0.08em;
+  font-weight: 700;
+}
+
+.hero-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.85rem, 4vw, 2.75rem);
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #ffffff 0%, var(--color-accent-primary, #f03e1e) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.contact-hero .hero-description {
+  font-size: 1.05rem;
+  color: var(--color-text-secondary, #9aa2b1);
+  margin-bottom: 2.75rem;
+  line-height: var(--lh-body, 1.6);
+  max-width: 720px;
+}
+
+/* Quick Cards Row */
+.contact-quick-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  width: 100%;
+}
+
+.quick-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: var(--color-bg-surface, #141824);
+  border: 1px solid var(--border-light, rgba(255, 255, 255, 0.12));
+  border-radius: var(--radius-md, 6px);
+  padding: 1.25rem 1rem;
+  text-align: left;
+  text-decoration: none;
+  transition: var(--transition-smooth, all 0.3s ease);
+}
+
+.quick-card:hover {
+  border-color: var(--color-accent-primary, #f03e1e);
+  transform: translateY(-4px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.quick-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-sm, 4px);
+  background: rgba(240, 62, 30, 0.12);
+  border: 1px solid rgba(240, 62, 30, 0.3);
+  color: var(--color-accent-primary, #f03e1e);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.quick-info {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-heading);
+}
+
+.quick-lbl {
+  font-size: 0.625rem;
+  color: var(--color-text-muted, #5e6675);
+  letter-spacing: 0.05em;
+  margin-bottom: 0.2rem;
+}
+
+.quick-val {
+  font-size: 0.825rem;
+  font-weight: 700;
+  color: var(--color-text-primary, #ffffff);
+}
+
+/* ==========================================================================
+   Max-Width 768px Responsive Query & Ultra-Narrow Fixes
+   ========================================================================== */
+@media (max-width: 768px) {
+  .contact-hero {
+    padding: calc(var(--navbar-height, 80px) + 1.5rem) 0 3rem 0;
+  }
+
+  .contact-hero-content {
+    align-items: center;
+    text-align: center;
+  }
+
+  .contact-hero .hero-description {
+    font-size: 0.925rem;
+    margin-bottom: 2rem;
+  }
+
+  .contact-quick-strip {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .quick-card {
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    padding: 1.25rem;
+  }
+}
+
+/* Ultra-Narrow Display Fixes (e.g. Galaxy Z Fold Cover <= 400px) */
+@media (max-width: 400px) {
+  .hero-badge {
+    max-width: 100% !important;
+    white-space: normal !important;
+    text-align: center !important;
+    padding: 0.35rem 0.65rem !important;
+    font-size: 0.6rem !important;
+  }
+
+  .badge-text {
+    word-break: break-word !important;
+  }
+
+  .quick-val {
+    font-size: 0.775rem !important;
+    word-break: break-all !important;
+    overflow-wrap: anywhere !important;
+  }
+}
+
+
+
+
+
+
+
+
+/* ==========================================================================
+   Contact Form & Regional Office Hubs Section Styles
+   ========================================================================== */
+
+.contact-form-section {
+  position: relative;
+  padding: 6rem 0;
+  background-color: var(--color-bg-main, #0b0d13);
+  border-top: 1px solid var(--border-light, rgba(255, 255, 255, 0.12));
+}
+
+.contact-grid-wrapper {
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  gap: 3.5rem;
+  align-items: start;
+}
+
+/* --- Left Form Card --- */
+.contact-form-card {
+  background: var(--color-bg-surface, #141824);
+  border: 1px solid var(--border-light, rgba(255, 255, 255, 0.12));
+  border-radius: var(--radius-lg, 10px);
+  padding: 3rem 2.5rem;
+  box-shadow: var(--shadow-md, 0 8px 24px rgba(0, 0, 0, 0.5));
+}
+
+.form-card-header {
+  margin-bottom: 2rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--border-light, rgba(255, 255, 255, 0.12));
+}
+
+.form-title {
+  font-family: var(--font-heading);
+  font-size: 1.65rem;
+  margin-top: 0.75rem;
+  margin-bottom: 0.35rem;
+}
+
+.form-subtitle {
+  font-size: 0.875rem;
+  color: var(--color-text-secondary, #9aa2b1);
+  margin-bottom: 0;
+}
+
+/* Form Inputs */
+.command-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.input-label {
+  font-family: var(--font-heading);
+  font-size: 0.68rem;
+  color: var(--color-text-muted, #5e6675);
+  letter-spacing: 0.08em;
+  font-weight: 700;
+}
+
+.form-input,
+.form-textarea {
+  width: 100%;
+  background: rgba(11, 13, 19, 0.85);
+  border: 1px solid var(--border-light, rgba(255, 255, 255, 0.12));
+  border-radius: var(--radius-sm, 4px);
+  padding: 0.85rem 1rem;
+  color: var(--color-text-primary, #ffffff);
+  font-family: var(--font-sans);
+  font-size: 0.925rem;
+  transition: var(--transition-smooth, all 0.3s ease);
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: var(--color-accent-primary, #f03e1e);
+  box-shadow: 0 0 12px var(--color-accent-glow, rgba(240, 62, 30, 0.35));
+}
+
+.form-input.input-invalid,
+.form-textarea.input-invalid {
+  border-color: var(--color-accent-primary, #f03e1e) !important;
+  box-shadow: 0 0 10px rgba(240, 62, 30, 0.5) !important;
+}
+
+.error-msg {
+  display: none;
+  font-family: var(--font-heading);
+  font-size: 0.65rem;
+  color: var(--color-accent-primary, #f03e1e);
+  letter-spacing: 0.05em;
+  margin-top: 0.2rem;
+}
+
+.error-msg.active {
+  display: block;
+}
+
+/* Radio Controls */
+.priority-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.priority-radio input[type="radio"] {
+  display: none;
+}
+
+.radio-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1rem;
+  background: rgba(11, 13, 19, 0.85);
+  border: 1px solid var(--border-light, rgba(255, 255, 255, 0.12));
+  border-radius: var(--radius-sm, 4px);
+  font-family: var(--font-heading);
+  font-size: 0.725rem;
+  color: var(--color-text-secondary, #9aa2b1);
+  cursor: pointer;
+  transition: var(--transition-smooth, all 0.3s ease);
+  text-align: center;
+}
+
+.priority-radio input[type="radio"]:checked + .radio-btn {
+  border-color: var(--color-accent-primary, #f03e1e);
+  background: rgba(240, 62, 30, 0.15);
+  color: var(--color-text-primary, #ffffff);
+  box-shadow: 0 0 10px var(--color-accent-glow, rgba(240, 62, 30, 0.35));
+}
+
+.form-submit-btn {
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+/* --- Right Side Info Card --- */
+.contact-info-card {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.terminal-status-box {
+  background: rgba(11, 13, 19, 0.9);
+  border: 1px solid var(--border-light, rgba(255, 255, 255, 0.12));
+  border-radius: var(--radius-md, 6px);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.status-top {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-heading);
+  font-size: 0.7rem;
+  color: var(--color-text-primary, #ffffff);
+  letter-spacing: 0.08em;
+  padding-bottom: 0.65rem;
+  border-bottom: 1px solid var(--border-light, rgba(255, 255, 255, 0.12));
+}
+
+.live-dot {
+  width: 6px;
+  height: 6px;
+  background: #67c23a;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #67c23a;
+}
+
+.status-metric {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-heading);
+  font-size: 0.725rem;
+}
+
+.metric-lbl {
+  color: var(--color-text-muted, #5e6675);
+}
+
+.metric-val {
+  color: var(--color-text-primary, #ffffff);
+  font-weight: 700;
+}
+
+.metric-val.text-success {
+  color: #67c23a;
+}
+
+.command-hubs-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.hub-node {
+  background: var(--color-bg-surface, #141824);
+  border: 1px solid var(--border-light, rgba(255, 255, 255, 0.12));
+  border-radius: var(--radius-md, 6px);
+  padding: 1.5rem;
+  transition: var(--transition-smooth, all 0.3s ease);
+}
+
+.hub-node:hover {
+  border-color: var(--color-accent-primary, #f03e1e);
+}
+
+.hub-code {
+  font-family: var(--font-heading);
+  font-size: 0.65rem;
+  color: var(--color-accent-primary, #f03e1e);
+  letter-spacing: 0.08em;
+  display: block;
+  margin-bottom: 0.35rem;
+}
+
+.hub-name {
+  font-size: 1.1rem;
+  margin-bottom: 0.35rem;
+}
+
+.hub-address {
+  font-size: 0.85rem;
+  color: var(--color-text-secondary, #9aa2b1);
+  margin-bottom: 1rem;
+}
+
+.hub-link {
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  color: var(--color-accent-primary, #f03e1e);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.security-compliance-banner {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 1.25rem;
+  background: rgba(20, 24, 36, 0.5);
+  border: 1px dashed var(--border-light, rgba(255, 255, 255, 0.12));
+  border-radius: var(--radius-md, 6px);
+  font-family: var(--font-heading);
+  font-size: 0.68rem;
+  color: var(--color-text-muted, #5e6675);
+}
+
+.security-compliance-banner svg {
+  color: var(--color-accent-primary, #f03e1e);
+  flex-shrink: 0;
+}
+
+/* ==========================================================================
+   Max-Width 768px Responsive Query & Galaxy Z Fold 5 Fixes
+   ========================================================================== */
+@media (max-width: 768px) {
+  .contact-form-section {
+    padding: 4rem 0;
+  }
+
+  .contact-grid-wrapper {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .contact-form-card {
+    padding: 2rem 1.25rem;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .priority-options {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-info-card {
+    gap: 1.5rem;
+  }
+
+  .hub-node {
+    text-align: center;
+  }
+
+  .security-compliance-banner {
+    text-align: center;
+    flex-direction: column;
+  }
+}
+
+/* Ultra-Narrow Display Fixes (e.g. Galaxy Z Fold Cover <= 400px) */
+@media (max-width: 400px) {
+  .contact-form-card {
+    padding: 1.5rem 0.85rem !important;
+  }
+
+  .form-title {
+    font-size: clamp(1.25rem, 5vw, 1.5rem) !important;
+    word-wrap: break-word !important;
+  }
+
+  .form-input,
+  .form-textarea {
+    font-size: 0.825rem !important;
+    padding: 0.7rem 0.75rem !important;
+  }
+}
+
+
+
+
+
+
+
+/* ==========================================================================
+   Regional Operational Network Section Styles
+   ========================================================================== */
+
+.network-section {
+  position: relative;
+  padding: 6rem 0;
+  background-color: var(--color-bg-main, #0b0d13);
+  border-top: 1px solid var(--border-light, rgba(255, 255, 255, 0.12));
+}
+
+.network-console-box {
+  background: var(--color-bg-surface, #141824);
+  border: 1px solid var(--border-light, rgba(255, 255, 255, 0.12));
+  border-radius: var(--radius-lg, 10px);
+  overflow: hidden;
+  box-shadow: var(--shadow-md, 0 8px 24px rgba(0, 0, 0, 0.5));
+}
+
+/* HUD Top Bar */
+.network-hud-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.85rem 1.75rem;
+  background: rgba(11, 13, 19, 0.9);
+  border-bottom: 1px solid var(--border-light, rgba(255, 255, 255, 0.12));
+  font-family: var(--font-heading);
+  font-size: 0.725rem;
+}
+
+.hud-left {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.hud-status-dot {
+  width: 7px;
+  height: 7px;
+  background: #67c23a;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #67c23a;
+  animation: pulse-beacon 1.5s infinite alternate;
+}
+
+.hud-title {
+  color: var(--color-text-primary, #ffffff);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.hud-coord {
+  color: var(--color-text-muted, #5e6675);
+  letter-spacing: 0.05em;
+}
+
+/* Split Grid Layout */
+.network-split-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+}
+
+/* Left Facility List */
+.facility-list {
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid var(--border-light, rgba(255, 255, 255, 0.12));
+}
+
+.facility-item {
+  padding: 1.75rem 2rem;
+  border-bottom: 1px dashed var(--border-light, rgba(255, 255, 255, 0.12));
+  background: transparent;
+  transition: var(--transition-smooth, all 0.3s ease);
+  cursor: pointer;
+}
+
+.facility-item:last-child {
+  border-bottom: none;
+}
+
+.facility-item:hover,
+.facility-item.active {
+  background: rgba(20, 24, 36, 0.8);
+  border-left: 3px solid var(--color-accent-primary, #f03e1e);
+}
+
+.facility-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-heading);
+  font-size: 0.68rem;
+  margin-bottom: 0.4rem;
+}
+
+.fac-code {
+  color: var(--color-accent-primary, #f03e1e);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.fac-status {
+  color: var(--color-text-muted, #5e6675);
+}
+
+.fac-status.text-success {
+  color: #67c23a;
+}
+
+.fac-name {
+  font-size: 1.15rem;
+  margin-bottom: 0.35rem;
+  color: var(--color-text-primary, #ffffff);
+}
+
+.fac-details {
+  font-size: 0.875rem;
+  color: var(--color-text-secondary, #9aa2b1);
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.fac-meta {
+  display: flex;
+  gap: 1.25rem;
+  font-family: var(--font-heading);
+  font-size: 0.68rem;
+  color: var(--color-text-muted, #5e6675);
+}
+
+/* Right Radar Panel */
+.network-visual-preview {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(11, 13, 19, 0.5);
+}
+
+.radar-display {
+  position: relative;
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: radial-gradient(circle, rgba(20, 24, 36, 0.9) 0%, rgba(11, 13, 19, 0.95) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem 0;
+  overflow: hidden;
+  box-shadow: inset 0 0 20px var(--color-accent-glow, rgba(240, 62, 30, 0.35));
+}
+
+.radar-circle {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px dashed rgba(255, 255, 255, 0.12);
+}
+
+.circle-1 { width: 160px; height: 160px; }
+.circle-2 { width: 80px; height: 80px; }
+
+.radar-line-v {
+  position: absolute;
+  width: 1px;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.radar-line-h {
+  position: absolute;
+  height: 1px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.radar-sweep-blade {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: conic-gradient(from 0deg, transparent 75%, var(--color-accent-glow, rgba(240, 62, 30, 0.35)) 100%);
+  animation: radar-spin 5s linear infinite;
+}
+
+.radar-blip {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: var(--color-accent-primary, #f03e1e);
+  border-radius: 50%;
+  box-shadow: 0 0 10px var(--color-accent-primary, #f03e1e);
+  z-index: 2;
+}
+
+.blip-1 { top: 35%; left: 62%; }
+.blip-2 { top: 65%; left: 30%; }
+.blip-3 { top: 25%; left: 25%; }
+
+.radar-overlay-tag {
+  position: absolute;
+  bottom: 0.85rem;
+  font-family: var(--font-heading);
+  font-size: 0.6rem;
+  color: var(--color-text-primary, #ffffff);
+  background: rgba(11, 13, 19, 0.85);
+  padding: 0.35rem 0.65rem;
+  border-radius: var(--radius-sm, 4px);
+  border: 1px solid var(--border-light, rgba(255, 255, 255, 0.12));
+  text-align: center;
+  z-index: 3;
+}
+
+.tag-signal {
+  display: block;
+  color: var(--color-accent-primary, #f03e1e);
+  margin-top: 0.15rem;
+}
+
+.preview-actions {
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+  justify-content: center;
+}
+
+@keyframes radar-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes pulse-beacon {
+  0% { opacity: 0.3; transform: scale(0.85); }
+  100% { opacity: 1; transform: scale(1.2); }
+}
+
+/* ==========================================================================
+   Max-Width 768px Responsive Query & Galaxy Z Fold 5 Fixes
+   ========================================================================== */
+@media (max-width: 768px) {
+  .network-section {
+    padding: 4rem 0;
+  }
+
+  .network-hud-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
+    padding: 1rem 1.25rem;
+  }
+
+  .network-split-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .facility-list {
+    border-right: none;
+    border-bottom: 1px solid var(--border-light, rgba(255, 255, 255, 0.12));
+  }
+
+  .facility-item {
+    padding: 1.5rem 1.25rem;
+    text-align: center;
+  }
+
+  .facility-header {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .fac-meta {
+    justify-content: center;
+  }
+
+  .network-visual-preview {
+    padding: 2rem 1.25rem;
+  }
+
+  .preview-actions {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .preview-actions .btn {
+    width: 100%;
+    max-width: 280px;
+  }
+}
+
+/* Ultra-Narrow Display Fixes (e.g. Galaxy Z Fold Cover <= 400px) */
+@media (max-width: 400px) {
+  .radar-display {
+    width: 180px !important;
+    height: 180px !important;
+  }
+
+  .circle-1 { width: 120px !important; height: 120px !important; }
+  .circle-2 { width: 60px !important; height: 60px !important; }
+
+  .fac-name {
+    font-size: 1rem !important;
+    word-wrap: break-word !important;
+  }
+}
+
+
+
+
+
+
+
+/* ==========================================================================
+   Support Matrix & FAQ Accordion Section Styles
+   ========================================================================== */
+
+.contact-faq-section {
+  position: relative;
+  padding: 6rem 0;
+  background-color: var(--color-bg-main, #0b0d13);
+  border-top: 1px solid var(--border-light, rgba(255, 255, 255, 0.12));
+}
+
+.faq-accordion-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  max-width: 900px;
+  margin: 0 auto 3.5rem auto;
+}
+
+/* Accordion Element */
+.faq-item {
+  background: var(--color-bg-surface, #141824);
+  border: 1px solid var(--border-light, rgba(255, 255, 255, 0.12));
+  border-radius: var(--radius-lg, 10px);
+  overflow: hidden;
+  transition: var(--transition-smooth, all 0.3s ease);
+}
+
+.faq-item[open] {
+  border-color: var(--color-accent-primary, #f03e1e);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.faq-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+  padding: 1.5rem 1.75rem;
+  background: rgba(11, 13, 19, 0.6);
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+}
+
+.faq-summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-code {
+  font-family: var(--font-heading);
+  font-size: 0.68rem;
+  color: var(--color-accent-primary, #f03e1e);
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  min-width: 90px;
+}
+
+.faq-question {
+  flex-grow: 1;
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  color: var(--color-text-primary, #ffffff);
+}
+
+.faq-icon {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  color: var(--color-text-muted, #5e6675);
+  transition: transform 0.3s ease;
+}
+
+.faq-item[open] .faq-icon {
+  transform: rotate(45deg);
+  color: var(--color-accent-primary, #f03e1e);
+}
+
+/* Answer Content */
+.faq-answer {
+  padding: 1.5rem 1.75rem;
+  border-top: 1px dashed var(--border-light, rgba(255, 255, 255, 0.12));
+  background: rgba(20, 24, 36, 0.4);
+}
+
+.faq-answer p {
+  font-size: 0.925rem;
+  line-height: 1.65;
+  color: var(--color-text-secondary, #9aa2b1);
+  margin-bottom: 1.25rem;
+}
+
+.faq-link {
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  color: var(--color-accent-primary, #f03e1e);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.faq-link:hover {
+  color: var(--color-text-primary, #ffffff);
+}
+
+/* FAQ Footer Banner */
+.faq-footer-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 900px;
+  margin: 0 auto;
+  padding-top: 1.5rem;
+  border-top: 1px dashed var(--border-light, rgba(255, 255, 255, 0.12));
+}
+
+.faq-footer-banner p {
+  margin-bottom: 0;
+  font-size: 0.925rem;
+  color: var(--color-text-secondary, #9aa2b1);
+}
+
+/* ==========================================================================
+   Max-Width 768px Responsive Query & Galaxy Z Fold 5 Fixes
+   ========================================================================== */
+@media (max-width: 768px) {
+  .contact-faq-section {
+    padding: 4rem 0;
+  }
+
+  .faq-summary {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    padding: 1.25rem;
+    position: relative;
+  }
+
+  .faq-icon {
+    position: absolute;
+    top: 1.25rem;
+    right: 1.25rem;
+  }
+
+  .faq-question {
+    font-size: 0.95rem;
+  }
+
+  .faq-answer {
+    padding: 1.25rem;
+  }
+
+  .faq-footer-banner {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.25rem;
+  }
+
+  .faq-footer-banner .btn {
+    width: 100%;
+    max-width: 280px;
+  }
+}
+
+/* Ultra-Narrow Display Fixes (e.g. Galaxy Z Fold Cover <= 400px) */
+@media (max-width: 400px) {
+  .faq-question {
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+  }
+}
+
+
+
+
+
+
+/* ==========================================================================
+   Contact CTA Banner Section Styles
+   ========================================================================== */
+
+.contact-cta-section {
+  position: relative;
+  padding: 6rem 0;
+  background-color: var(--color-bg-main, #0b0d13);
+  border-top: 1px solid var(--border-light, rgba(255, 255, 255, 0.12));
+}
+
+.contact-cta-box {
+  position: relative;
+  background: var(--color-bg-surface, #141824);
+  border: 1px solid var(--border-light, rgba(255, 255, 255, 0.12));
+  border-left: 4px solid var(--color-accent-primary, #f03e1e);
+  border-radius: var(--radius-lg, 10px);
+  padding: 4rem 2.5rem;
+  overflow: hidden;
+  box-shadow: var(--shadow-md, 0 8px 24px rgba(0, 0, 0, 0.5));
+}
+
+/* Background Layers */
+.cta-glow-element {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(
+    circle, 
+    var(--color-accent-glow, rgba(240, 62, 30, 0.35)) 0%, 
+    transparent 70%
+  );
+  filter: blur(90px);
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+.cta-grid-texture {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(var(--border-light, rgba(255, 255, 255, 0.12)) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border-light, rgba(255, 255, 255, 0.12)) 1px, transparent 1px);
+  background-size: 30px 30px;
+  opacity: 0.08;
+  pointer-events: none;
+}
+
+/* Content Container */
+.cta-inner-content {
+  position: relative;
+  z-index: 2;
+  max-width: 760px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.cta-status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.85rem;
+  background: rgba(11, 13, 19, 0.85);
+  border: 1px solid var(--border-light, rgba(255, 255, 255, 0.12));
+  border-radius: var(--radius-full, 9999px);
+  font-family: var(--font-heading);
+  font-size: 0.68rem;
+  margin-bottom: 1.5rem;
+}
+
+.status-dot {
+  width: 6px;
+  height: 6px;
+  background: #67c23a;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #67c23a;
+}
+
+.status-lbl {
+  color: var(--color-text-secondary, #9aa2b1);
+  letter-spacing: 0.08em;
+  font-weight: 700;
+}
+
+.cta-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.75rem, 4vw, 2.75rem);
+  margin-bottom: 1rem;
+}
+
+.cta-description {
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--color-text-secondary, #9aa2b1);
+  margin-bottom: 2.25rem;
+}
+
+.cta-button-group {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-bottom: 2.5rem;
+}
+
+/* Telemetry Footer Strip */
+.cta-telemetry-bar {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  font-family: var(--font-heading);
+  font-size: 0.725rem;
+  padding-top: 1.25rem;
+  border-top: 1px dashed var(--border-light, rgba(255, 255, 255, 0.12));
+  width: 100%;
+  justify-content: center;
+}
+
+.telemetry-node {
+  display: flex;
+  gap: 0.35rem;
+}
+
+.t-lbl {
+  color: var(--color-text-muted, #5e6675);
+}
+
+.t-val {
+  color: var(--color-text-primary, #ffffff);
+  font-weight: 700;
+}
+
+.t-val.text-success {
+  color: #67c23a;
+}
+
+.t-divider {
+  color: var(--border-light, rgba(255, 255, 255, 0.12));
+}
+
+/* ==========================================================================
+   Max-Width 768px Responsive Query & Ultra-Narrow Fixes
+   ========================================================================== */
+@media (max-width: 768px) {
+  .contact-cta-section {
+    padding: 4rem 0;
+  }
+
+  .contact-cta-box {
+    padding: 2.5rem 1.25rem;
+  }
+
+  .cta-description {
+    font-size: 0.925rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .cta-button-group {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.85rem;
+  }
+
+  .cta-button-group .btn {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .cta-telemetry-bar {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .t-divider {
+    display: none;
+  }
+}
+
+/* Ultra-Narrow Display Fixes (e.g. Galaxy Z Fold Cover <= 400px) */
+@media (max-width: 400px) {
+  .cta-status-badge {
+    max-width: 100% !important;
+    white-space: normal !important;
+    text-align: center !important;
+    padding: 0.35rem 0.65rem !important;
+    font-size: 0.6rem !important;
+  }
+
+  .status-lbl {
+    word-break: break-word !important;
+  }
+
+  .cta-title {
+    font-size: clamp(1.25rem, 5.5vw, 1.65rem) !important;
+    word-wrap: break-word !important;
+  }
+}
