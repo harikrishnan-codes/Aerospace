@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Command Center | Spacly Aerospace</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700;800&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <link rel="stylesheet" href="root.css">
+  <link rel="stylesheet" href="admin.css">
+  <link rel="icon" href="./assets/bg remove.webp">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="dashboard-body">
+
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <a href="index.html" class="logo">
+        <img src="./assets/orange.webp" alt="logo" width="150px" height="50px">
+      </a>
+      <button class="sidebar-close-btn" id="sidebarCloseBtn" aria-label="Close Sidebar">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+
+    <div class="sidebar-user-info">
+      <i class="fa-solid fa-user-shield"></i>
+      <div class="user-details">
+        <span class="user-role">Administrator</span>
+        <span class="user-email" id="adminSidebarEmail">admin@spacly.com</span>
+      </div>
+    </div>
+
+    <ul class="sidebar-menu">
+      <li>
+        <a href="#overview" class="sidebar-link active" data-section="overviewSection">
+          <i class="fa-solid fa-chart-line"></i>
+          <span>Overview</span>
+        </a>
+      </li>
+      <li>
+        <a href="#satellites" class="sidebar-link" data-section="satellitesSection">
+          <i class="fa-solid fa-satellite"></i>
+          <span>Satellites</span>
+        </a>
+      </li>
+      <li>
+        <a href="#telemetry" class="sidebar-link" data-section="telemetrySection">
+          <i class="fa-solid fa-rocket"></i>
+          <span>Launch Telemetry</span>
+        </a>
+      </li>
+      <li>
+        <a href="#logs" class="sidebar-link" data-section="logsSection">
+          <i class="fa-solid fa-server"></i>
+          <span>System Logs</span>
+        </a>
+      </li>
+      <li>
+        <a href="#settings" class="sidebar-link" data-section="settingsSection">
+          <i class="fa-solid fa-gear"></i>
+          <span>Settings</span>
+        </a>
+      </li>
+    </ul>
+
+    <div class="sidebar-footer">
+      <button id="adminLogoutBtn" class="btn-join btn-logout-sidebar">
+        <i class="fa-solid fa-right-from-bracket"></i>
+        <span>Logout</span>
+      </button>
+    </div>
+  </aside>
+
+  <div class="dashboard-main-content">
+
+    <header class="admin-topbar">
+      <div class="topbar-left">
+        <button class="hamburger" id="adminHamburgerBtn" aria-label="Toggle Sidebar">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+        <h3 class="topbar-title" id="currentSectionTitle">Overview</h3>
+      </div>
+
+      <div class="topbar-right">
+        <div class="admin-profile-badge">
+          <i class="fa-solid fa-circle-user"></i>
+          <span id="adminTopEmail">admin@spacly.com</span>
+        </div>
+      </div>
+    </header>
+
+    <main class="dashboard-view-area">
+
+      <!-- OVERVIEW SECTION -->
+      <section class="dash-section active" id="overviewSection">
+        <h2 class="dash-page-title">System Overview</h2>
+        <p class="section-desc">Global fleet status, real-time communications, and mission parameters.</p>
+
+        <div class="dash-metrics-grid">
+          <div class="metric-card">
+            <div class="metric-icon"><i class="fa-solid fa-satellite-dish"></i></div>
+            <div class="metric-info">
+              <h4>Active Satellites</h4>
+              <p class="metric-value">24 Units</p>
+            </div>
+            <span class="metric-status status-nominal">Online</span>
+          </div>
+
+          <div class="metric-card">
+            <div class="metric-icon"><i class="fa-solid fa-fire-flame-curved"></i></div>
+            <div class="metric-info">
+              <h4>Active Missions</h4>
+              <p class="metric-value">08 Orbital</p>
+            </div>
+            <span class="metric-status status-nominal">Active</span>
+          </div>
+
+          <div class="metric-card">
+            <div class="metric-icon"><i class="fa-solid fa-wifi"></i></div>
+            <div class="metric-info">
+              <h4>Signal Health</h4>
+              <p class="metric-value">99.8%</p>
+            </div>
+            <span class="metric-status status-nominal">Optimal</span>
+          </div>
+        </div>
+
+        <div class="overview-analytics-grid">
+          <div class="glass-panel">
+            <div class="panel-header">
+              <h4><i class="fa-solid fa-tower-cell"></i> Telemetry Data Stream</h4>
+              <span class="live-dot">LIVE</span>
+            </div>
+            <div class="stream-bars">
+              <div class="stream-col"><span style="height: 65%;"></span><label>SAT-1</label></div>
+              <div class="stream-col"><span style="height: 85%;"></span><label>SAT-2</label></div>
+              <div class="stream-col"><span style="height: 40%;"></span><label>SAT-3</label></div>
+              <div class="stream-col"><span style="height: 95%;"></span><label>SAT-4</label></div>
+              <div class="stream-col"><span style="height: 70%;"></span><label>SAT-5</label></div>
+            </div>
+          </div>
+
+          <div class="glass-panel">
+            <div class="panel-header">
+              <h4><i class="fa-solid fa-triangle-exclamation"></i> Quick System Alerts</h4>
+            </div>
+            <ul class="alert-list">
+              <li><i class="fa-solid fa-circle-check icon-green"></i> Primary downlink channel synchronized.</li>
+              <li><i class="fa-solid fa-circle-info icon-orange"></i> Satellite #SAT-102 scheduled for alignment.</li>
+              <li><i class="fa-solid fa-shield-halved icon-blue"></i> Firewall definitions updated across nodes.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- SATELLITES SECTION -->
+      <section class="dash-section hidden" id="satellitesSection">
+        <h2 class="dash-page-title">Satellite Management</h2>
+        <p class="section-desc">Manage orbital positions, power outputs, and communications array diagnostics.</p>
+
+        <div class="table-container">
+          <table class="dash-table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Orbit Altitude</th>
+                <th>Orbit Status</th>
+                <th>Battery Level</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>#SAT-101</td>
+                <td>Spacly Prime-1</td>
+                <td>420 km LEO</td>
+                <td><span class="badge badge-success">Nominal</span></td>
+                <td>
+                  <div class="progress-bar-wrap">
+                    <div class="progress-fill" style="width: 98%;"></div><span>98%</span>
+                  </div>
+                </td>
+                <td><button class="btn-table-action" onclick="window.location.href='error.html'">Calibrate</button></td>
+              </tr>
+              <tr>
+                <td>#SAT-102</td>
+                <td>AeroScout-X</td>
+                <td>550 km LEO</td>
+                <td><span class="badge badge-warning">Calibrating</span></td>
+                <td>
+                  <div class="progress-bar-wrap">
+                    <div class="progress-fill warning" style="width: 64%;"></div><span>64%</span>
+                  </div>
+                </td>
+                <td><button class="btn-table-action" onclick="window.location.href='error.html'">Calibrate</button></td>
+              </tr>
+              <tr>
+                <td>#SAT-103</td>
+                <td>Orbital-Guard</td>
+                <td>35,786 km GEO</td>
+                <td><span class="badge badge-success">Nominal</span></td>
+                <td>
+                  <div class="progress-bar-wrap">
+                    <div class="progress-fill" style="width: 88%;"></div><span>88%</span>
+                  </div>
+                </td>
+                <td><button class="btn-table-action" onclick="window.location.href='error.html'">Calibrate</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- LAUNCH TELEMETRY SECTION -->
+      <section class="dash-section hidden" id="telemetrySection">
+        <h2 class="dash-page-title">Launch Telemetry</h2>
+        <p class="section-desc">Real-time rocket engine diagnostics, fuel pressure, and altitude telemetry tracking.</p>
+
+        <div class="telemetry-banner">
+          <div class="telemetry-status-box">
+            <i class="fa-solid fa-microchip"></i>
+            <div>
+              <span class="label">TELEMETRY FEED STATUS</span>
+              <h3 class="status-text">ONLINE & SYNCHRONIZED</h3>
+            </div>
+          </div>
+          <div class="countdown-box">
+            <span class="label">NEXT PLANNED LAUNCH</span>
+            <div class="countdown-timer">T-Minus 04d:12h:30m</div>
+          </div>
+        </div>
+
+        <div class="telemetry-gauges-grid">
+          <div class="gauge-card">
+            <h4>Engine Thrust Output</h4>
+            <div class="gauge-value">7,600 kN</div>
+            <div class="gauge-bar">
+              <div class="gauge-fill" style="width: 82%;"></div>
+            </div>
+          </div>
+          <div class="gauge-card">
+            <h4>RP-1 Rocket Fuel Level</h4>
+            <div class="gauge-value">94.2%</div>
+            <div class="gauge-bar">
+              <div class="gauge-fill" style="width: 94%;"></div>
+            </div>
+          </div>
+          <div class="gauge-card">
+            <h4>Liquid Oxygen (LOX) Temp</h4>
+            <div class="gauge-value">-183 °C</div>
+            <div class="gauge-bar">
+              <div class="gauge-fill warning" style="width: 75%;"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SYSTEM LOGS SECTION -->
+      <section class="dash-section hidden" id="logsSection">
+        <h2 class="dash-page-title">System Logs</h2>
+        <p class="section-desc">Audit logs for system updates, security access, and data transmissions.</p>
+
+        <div class="logs-console">
+          <div class="console-header">
+            <span><i class="fa-solid fa-terminal"></i> Terminal Output</span>
+            <span class="console-status">CONNECTED</span>
+          </div>
+          <div class="console-body">
+            <div class="log-item">[09:44:12] <span class="tag info">[INFO]</span> User authenticated via clearance
+              terminal.</div>
+            <div class="log-item">[09:44:18] <span class="tag success">[SUCCESS]</span> Satellite #SAT-101 telemetry
+              synchronized successfully.</div>
+            <div class="log-item">[09:45:01] <span class="tag warn">[WARN]</span> Minor solar flare radiation detected
+              on sector 4.</div>
+            <div class="log-item">[09:46:22] <span class="tag info">[INFO]</span> Encrypted telemetry data packets
+              received from LEO array.</div>
+            <div class="log-item">[09:47:00] <span class="tag success">[SUCCESS]</span> Automated security handshake
+              completed.</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTROL SETTINGS SECTION -->
+      <section class="dash-section hidden" id="settingsSection">
+        <h2 class="dash-page-title">Control Settings</h2>
+        <p class="section-desc">System configuration, API key parameters, and global access permissions.</p>
+
+        <div class="settings-card">
+          <form class="auth-form" id="settingsForm" novalidate>
+
+            <!-- Telemetry Refresh Interval -->
+            <div class="input-group">
+              <label for="refreshInterval">Telemetry Refresh Interval</label>
+              <div class="input-field">
+                <i class="fa-solid fa-clock field-icon"></i>
+                <input type="text" id="refreshInterval" value="5000ms" placeholder="e.g. 5000ms" required>
+              </div>
+              <span class="error-msg" id="intervalError"></span>
+            </div>
+
+            <!-- Custom Dropdown: Security Access Level -->
+            <div class="input-group">
+              <label>Security Access Level</label>
+              <div class="input-field custom-dropdown-wrap" id="accessDropdown">
+                <i class="fa-solid fa-shield-halved field-icon"></i>
+                <input type="hidden" id="selectedAccessLevel" value="Level 5 - Administrator Clearance">
+
+                <button type="button" class="dropdown-trigger" id="accessDropdownTrigger">
+                  <span class="selected-text">Level 5 - Administrator Clearance</span>
+                  <i class="fa-solid fa-chevron-down arrow-icon"></i>
+                </button>
+
+                <ul class="dropdown-menu" id="accessDropdownMenu">
+                  <li class="dropdown-item selected" data-value="Level 5 - Administrator Clearance">
+                    <i class="fa-solid fa-user-shield"></i> Level 5 - Administrator Clearance
+                  </li>
+                  <li class="dropdown-item" data-value="Level 3 - Flight Engineer">
+                    <i class="fa-solid fa-user-gear"></i> Level 3 - Flight Engineer
+                  </li>
+                  <li class="dropdown-item" data-value="Level 1 - Read Only">
+                    <i class="fa-solid fa-user-check"></i> Level 1 - Read Only
+                  </li>
+                </ul>
+              </div>
+              <span class="error-msg" id="accessError"></span>
+            </div>
+
+            <!-- API Key Credentials -->
+            <div class="input-group">
+              <label for="apiKey">API Key Credentials</label>
+              <div class="input-field">
+                <i class="fa-solid fa-key field-icon"></i>
+                <input type="password" id="apiKey" value="spacly_live_sec_89213791238912" required>
+                <i class="fa-solid fa-eye toggle-password" id="toggleApiKey"></i>
+              </div>
+              <span class="error-msg" id="apiKeyError"></span>
+            </div>
+
+            <button type="submit" class="btn-join btn-submit-settings">Save Configurations</button>
+          </form>
+        </div>
+      </section>
+
+    </main>
+
+  </div>
+
+  <script src="admin.js"></script>
+
+  <script>
+
+    document.addEventListener('DOMContentLoaded', () => {
+      let activeUser = sessionStorage.getItem('activeUserEmail');
+      if (!activeUser) {
+        activeUser = 'admin@spacly.com';
+        sessionStorage.setItem('activeUserEmail', activeUser);
+      }
+
+      const adminTopEmail = document.getElementById('adminTopEmail');
+      const adminSidebarEmail = document.getElementById('adminSidebarEmail');
+      if (adminTopEmail) adminTopEmail.textContent = activeUser;
+      if (adminSidebarEmail) adminSidebarEmail.textContent = activeUser;
+
+      const sidebar = document.getElementById('sidebar');
+      const adminHamburgerBtn = document.getElementById('adminHamburgerBtn');
+      const sidebarCloseBtn = document.getElementById('sidebarCloseBtn');
+
+      if (adminHamburgerBtn && sidebar) {
+        adminHamburgerBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          sidebar.classList.add('active');
+        });
+      }
+
+      if (sidebarCloseBtn && sidebar) {
+        sidebarCloseBtn.addEventListener('click', () => {
+          sidebar.classList.remove('active');
+        });
+      }
+
+      document.addEventListener('click', (e) => {
+        if (window.innerWidth <= 768 && sidebar && sidebar.classList.contains('active')) {
+          if (!sidebar.contains(e.target) && adminHamburgerBtn && !adminHamburgerBtn.contains(e.target)) {
+            sidebar.classList.remove('active');
+          }
+        }
+      });
+
+      const sidebarLinks = document.querySelectorAll('.sidebar-link');
+      const sections = document.querySelectorAll('.dash-section');
+      const currentSectionTitle = document.getElementById('currentSectionTitle');
+
+      sidebarLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+
+          const targetSectionId = link.getAttribute('data-section');
+
+          sidebarLinks.forEach(l => l.classList.remove('active'));
+          link.classList.add('active');
+
+          sections.forEach(section => {
+            if (section.id === targetSectionId) {
+              section.classList.remove('hidden');
+              section.classList.add('active');
+            } else {
+              section.classList.add('hidden');
+              section.classList.remove('active');
+            }
+          });
+
+          if (currentSectionTitle) {
+            const linkText = link.querySelector('span');
+            if (linkText) currentSectionTitle.textContent = linkText.textContent;
+          }
+
+          if (window.innerWidth <= 768 && sidebar) {
+            sidebar.classList.remove('active');
+          }
+        });
+      });
+
+      document.querySelectorAll('.toggle-password').forEach(icon => {
+        icon.addEventListener('click', () => {
+          const input = icon.previousElementSibling;
+          if (input.type === 'password') {
+            input.type = 'text';
+            icon.classList.replace('fa-eye', 'fa-eye-slash');
+          } else {
+            input.type = 'password';
+            icon.classList.replace('fa-eye-slash', 'fa-eye');
+          }
+        });
+      });
+
+      const adminLogoutBtn = document.getElementById('adminLogoutBtn');
+      if (adminLogoutBtn) {
+        adminLogoutBtn.addEventListener('click', () => {
+          sessionStorage.clear();
+          window.location.href = 'auth.html';
+        });
+      }
+    });
+
+
+
+
+
+
+
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. Custom Dropdown Control
+      const accessDropdownWrap = document.getElementById('accessDropdown');
+      const accessDropdownTrigger = document.getElementById('accessDropdownTrigger');
+      const accessDropdownItems = document.querySelectorAll('#accessDropdownMenu .dropdown-item');
+      const selectedAccessLevel = document.getElementById('selectedAccessLevel');
+      const triggerText = accessDropdownTrigger ? accessDropdownTrigger.querySelector('.selected-text') : null;
+
+      if (accessDropdownTrigger && accessDropdownWrap) {
+        accessDropdownTrigger.addEventListener('click', (e) => {
+          e.stopPropagation();
+          accessDropdownWrap.classList.toggle('open');
+        });
+
+        accessDropdownItems.forEach(item => {
+          item.addEventListener('click', () => {
+            const val = item.getAttribute('data-value');
+
+            accessDropdownItems.forEach(i => i.classList.remove('selected'));
+            item.classList.add('selected');
+
+            if (selectedAccessLevel) selectedAccessLevel.value = val;
+            if (triggerText) triggerText.textContent = val;
+
+            accessDropdownWrap.classList.remove('open');
+          });
+        });
+
+        document.addEventListener('click', (e) => {
+          if (!accessDropdownWrap.contains(e.target)) {
+            accessDropdownWrap.classList.remove('open');
+          }
+        });
+      }
+
+      // 2. Eye Toggle for Password/API Key Field
+      const toggleApiKey = document.getElementById('toggleApiKey');
+      const apiKeyInput = document.getElementById('apiKey');
+
+      if (toggleApiKey && apiKeyInput) {
+        toggleApiKey.addEventListener('click', () => {
+          if (apiKeyInput.type === 'password') {
+            apiKeyInput.type = 'text';
+            toggleApiKey.classList.replace('fa-eye', 'fa-eye-slash');
+          } else {
+            apiKeyInput.type = 'password';
+            toggleApiKey.classList.replace('fa-eye-slash', 'fa-eye');
+          }
+        });
+      }
+
+      // 3. Settings Form Validation and Redirect
+      const settingsForm = document.getElementById('settingsForm');
+
+      if (settingsForm) {
+        settingsForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+          let isValid = true;
+
+          const refreshInterval = document.getElementById('refreshInterval');
+          const intervalErr = document.getElementById('intervalError');
+          const accessErr = document.getElementById('accessError');
+          const apiKeyErr = document.getElementById('apiKeyError');
+
+          // Refresh Interval Regex (e.g. 5000ms or 10s)
+          const intervalRegex = /^\d+(ms|s)$/i;
+
+          // Validate Refresh Interval
+          if (!refreshInterval.value.trim()) {
+            intervalErr.textContent = 'Telemetry refresh interval is required.';
+            isValid = false;
+          } else if (!intervalRegex.test(refreshInterval.value.trim())) {
+            intervalErr.textContent = 'Must be a valid time format (e.g., 5000ms or 10s).';
+            isValid = false;
+          } else {
+            intervalErr.textContent = '';
+          }
+
+          // Validate Security Access Level Dropdown Selection
+          if (!selectedAccessLevel.value) {
+            accessErr.textContent = 'Security clearance selection is required.';
+            isValid = false;
+          } else {
+            accessErr.textContent = '';
+          }
+
+          // Validate API Key Credentials
+          if (!apiKeyInput.value.trim()) {
+            apiKeyErr.textContent = 'API key credentials are required.';
+            isValid = false;
+          } else if (apiKeyInput.value.trim().length < 12) {
+            apiKeyErr.textContent = 'API key must be at least 12 characters long.';
+            isValid = false;
+          } else {
+            apiKeyErr.textContent = '';
+          }
+
+          // Redirect to 404 error page upon successful validation
+          if (isValid) {
+            window.location.href = 'error.html';
+          }
+        });
+      }
+    });
+
+
+
+  </script>
+
+
+
+</body>
+
+</html>

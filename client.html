@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Portal | Spacly Aerospace</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700;800&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+    <link rel="icon" href="./assets/bg remove.webp">
+    <link rel="stylesheet" href="root.css">
+    <link rel="stylesheet" href="client.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="dashboard-body">
+
+    <aside class="sidebar" id="clientSidebar">
+        <div class="sidebar-header">
+            <a href="index.html" class="logo">
+                <img src="./assets/orange.webp" alt="logo" width="150px" height="50px">
+            </a>
+            <button class="sidebar-close-btn" id="clientSidebarCloseBtn" aria-label="Close Sidebar">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+
+        <div class="sidebar-user-info">
+            <i class="fa-solid fa-user-gear"></i>
+            <div class="user-details">
+                <span class="user-role">Client Access</span>
+                <span class="user-email" id="clientSidebarEmail">client@spacly.com</span>
+            </div>
+        </div>
+
+        <ul class="sidebar-menu">
+            <li>
+                <a href="#services" class="sidebar-link active" data-section="servicesSection">
+                    <i class="fa-solid fa-cubes"></i>
+                    <span>Active Services</span>
+                </a>
+            </li>
+            <li>
+                <a href="#orders" class="sidebar-link" data-section="ordersSection">
+                    <i class="fa-solid fa-box-archive"></i>
+                    <span>My Orders</span>
+                </a>
+            </li>
+            <li>
+                <a href="#missions" class="sidebar-link" data-section="missionsSection">
+                    <i class="fa-solid fa-satellite-dish"></i>
+                    <span>Mission Tracking</span>
+                </a>
+            </li>
+            <li>
+                <a href="#docs" class="sidebar-link" data-section="docsSection">
+                    <i class="fa-solid fa-file-contract"></i>
+                    <span>Documents & Reports</span>
+                </a>
+            </li>
+            <li>
+                <a href="#support" class="sidebar-link" data-section="supportSection">
+                    <i class="fa-solid fa-headset"></i>
+                    <span>Support & Help</span>
+                </a>
+            </li>
+        </ul>
+
+        <div class="sidebar-footer">
+            <button id="clientLogoutBtn" class="btn-join btn-logout-sidebar">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span>Logout</span>
+            </button>
+        </div>
+    </aside>
+
+    <div class="dashboard-main-content">
+
+        <header class="admin-topbar">
+            <div class="topbar-left">
+                <button class="hamburger" id="clientHamburgerBtn" aria-label="Toggle Sidebar">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+                <h3 class="topbar-title" id="clientSectionTitle">Active Services</h3>
+            </div>
+
+            <div class="topbar-right">
+                <div class="admin-profile-badge">
+                    <i class="fa-solid fa-circle-user"></i>
+                    <span id="clientTopEmail">client@spacly.com</span>
+                </div>
+            </div>
+        </header>
+
+        <main class="dashboard-view-area">
+
+            <!-- ACTIVE SERVICES SECTION -->
+            <section class="dash-section active" id="servicesSection">
+                <h2 class="dash-page-title">Active Aerospace Services</h2>
+                <p class="section-desc">Overview of your subscribed payload packages and orbital bandwidth allocations.
+                </p>
+
+                <div class="dash-metrics-grid">
+                    <div class="metric-card">
+                        <div class="metric-icon"><i class="fa-solid fa-network-wired"></i></div>
+                        <div class="metric-info">
+                            <h4>Bandwidth Usage</h4>
+                            <p class="metric-value">12.4 GB/s</p>
+                        </div>
+                        <span class="metric-status status-nominal">Active</span>
+                    </div>
+
+                    <div class="metric-card">
+                        <div class="metric-icon"><i class="fa-solid fa-microchip"></i></div>
+                        <div class="metric-info">
+                            <h4>Allocated Nodes</h4>
+                            <p class="metric-value">04 Clusters</p>
+                        </div>
+                        <span class="metric-status status-nominal">Nominal</span>
+                    </div>
+
+                    <div class="metric-card">
+                        <div class="metric-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                        <div class="metric-info">
+                            <h4>Encryption SLA</h4>
+                            <p class="metric-value">AES-256</p>
+                        </div>
+                        <span class="metric-status status-nominal">Secured</span>
+                    </div>
+                </div>
+
+                <div class="glass-panel">
+                    <div class="panel-header">
+                        <h4><i class="fa-solid fa-server"></i> Current Payload Subscriptions</h4>
+                    </div>
+                    <div class="table-container">
+                        <table class="dash-table">
+                            <thead>
+                                <tr>
+                                    <th>Package Name</th>
+                                    <th>Orbit Type</th>
+                                    <th>Renewal Date</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>LEO Satellite Bandwidth Alpha</td>
+                                    <td>Low Earth Orbit</td>
+                                    <td>Dec 15, 2026</td>
+                                    <td><span class="badge badge-success">Running</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Deep Space Telemetry Stream</td>
+                                    <td>Geostationary Orbit</td>
+                                    <td>Jan 20, 2027</td>
+                                    <td><span class="badge badge-success">Running</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- MY ORDERS SECTION -->
+            <section class="dash-section hidden" id="ordersSection">
+                <h2 class="dash-page-title">My Payload Orders</h2>
+                <p class="section-desc">Track hardware procurement, component assembly, and shipment milestones.</p>
+
+                <div class="table-container">
+                    <table class="dash-table">
+                        <thead>
+                            <tr>
+                                <th>Order ID</th>
+                                <th>Item Details</th>
+                                <th>Order Date</th>
+                                <th>Amount</th>
+                                <th>Delivery Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>#ORD-8921</td>
+                                <td>Commercial CubeSat Housing Frame</td>
+                                <td>Jul 10, 2026</td>
+                                <td>$45,000</td>
+                                <td><span class="badge badge-success">Delivered</span></td>
+                            </tr>
+                            <tr>
+                                <td>#ORD-9014</td>
+                                <td>High-Gain Telemetry Antenna Module</td>
+                                <td>Jul 24, 2026</td>
+                                <td>$12,500</td>
+                                <td><span class="badge badge-warning">In Transit</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- MISSION TRACKING SECTION -->
+            <section class="dash-section hidden" id="missionsSection">
+                <h2 class="dash-page-title">Mission Live Tracking</h2>
+                <p class="section-desc">Real-time status of your dedicated launches and satellite deployments.</p>
+
+                <div class="telemetry-banner">
+                    <div class="telemetry-status-box">
+                        <i class="fa-solid fa-satellite"></i>
+                        <div>
+                            <span class="label">ASSIGNED SPACECRAFT</span>
+                            <h3 class="status-text">SPACLY-CLIENT-S1</h3>
+                        </div>
+                    </div>
+                    <div class="countdown-box">
+                        <span class="label">ORBITAL POSITION</span>
+                        <div class="countdown-timer">418.2 km LEO</div>
+                    </div>
+                </div>
+
+                <div class="telemetry-gauges-grid">
+                    <div class="gauge-card">
+                        <h4>Signal Link Quality</h4>
+                        <div class="gauge-value">99.4%</div>
+                        <div class="gauge-bar">
+                            <div class="gauge-fill" style="width: 99%;"></div>
+                        </div>
+                    </div>
+                    <div class="gauge-card">
+                        <h4>Solar Array Efficiency</h4>
+                        <div class="gauge-value">91.8%</div>
+                        <div class="gauge-bar">
+                            <div class="gauge-fill" style="width: 91%;"></div>
+                        </div>
+                    </div>
+                    <div class="gauge-card">
+                        <h4>Onboard Storage Usage</h4>
+                        <div class="gauge-value">42.1%</div>
+                        <div class="gauge-bar">
+                            <div class="gauge-fill" style="width: 42%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- DOCUMENTS SECTION -->
+            <section class="dash-section hidden" id="docsSection">
+                <h2 class="dash-page-title">Documents & Mission Reports</h2>
+                <p class="section-desc">Download mission manifests, telemetry logs, and compliance safety
+                    certifications.</p>
+
+                <div class="glass-panel">
+                    <ul class="alert-list" style="gap: 1.2rem;">
+                        <li style="justify-content: space-between;">
+                            <span><i class="fa-solid fa-file-pdf icon-orange"></i> Mission Manifest & Trajectory
+                                Analysis (PDF)</span>
+                            <button class="btn-table-action" onclick="window.location.href='error.html'"><i
+                                    class="fa-solid fa-download"></i> Download</button>
+                        </li>
+                        <li style="justify-content: space-between;">
+                            <span><i class="fa-solid fa-file-code icon-blue"></i> Raw Telemetry Log Export - Q2 2026
+                                (CSV)</span>
+                            <button class="btn-table-action" onclick="window.location.href='error.html'"><i
+                                    class="fa-solid fa-download"></i> Download</button>
+                        </li>
+                        <li style="justify-content: space-between;">
+                            <span><i class="fa-solid fa-shield-halved icon-green"></i> FAA Space License Compliance
+                                Clearance (PDF)</span>
+                            <button class="btn-table-action" onclick="window.location.href='error.html'"><i
+                                    class="fa-solid fa-download"></i> Download</button>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- SUPPORT SECTION -->
+            <!-- SUPPORT SECTION -->
+            <section class="dash-section hidden" id="supportSection">
+                <h2 class="dash-page-title">Support & Communication</h2>
+                <p class="section-desc">Get direct assistance from our aerospace ground engineering team.</p>
+
+                <div class="settings-card">
+                    <form class="auth-form" id="supportForm" novalidate>
+                        <div class="input-group">
+                            <label>Ticket Subject</label>
+                            <div class="input-field">
+                                <i class="fa-solid fa-heading field-icon"></i>
+                                <input type="text" id="ticketSubject" placeholder="e.g. Bandwidth adjustment request"
+                                    required>
+                            </div>
+                        </div>
+
+                        <!-- CUSTOM DROPDOWN SELECTOR -->
+                        <div class="input-group">
+                            <label>Select Department</label>
+                            <div class="input-field custom-dropdown-wrap" id="deptDropdown">
+                                <i class="fa-solid fa-building-user field-icon"></i>
+                                <input type="hidden" id="selectedDepartment" value="Orbital Engineering Support">
+
+                                <button type="button" class="dropdown-trigger" id="dropdownTrigger">
+                                    <span class="selected-text">Orbital Engineering Support</span>
+                                    <i class="fa-solid fa-chevron-down arrow-icon"></i>
+                                </button>
+
+                                <ul class="dropdown-menu" id="dropdownMenu">
+                                    <li class="dropdown-item selected" data-value="Orbital Engineering Support">
+                                        <i class="fa-solid fa-satellite"></i> Orbital Engineering Support
+                                    </li>
+                                    <li class="dropdown-item" data-value="Billing & Subscriptions">
+                                        <i class="fa-solid fa-credit-card"></i> Billing & Subscriptions
+                                    </li>
+                                    <li class="dropdown-item" data-value="Hardware Procurement">
+                                        <i class="fa-solid fa-microchip"></i> Hardware Procurement
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="input-group">
+                            <label>Detailed Message</label>
+                            <div class="input-field align-top">
+                                <i class="fa-solid fa-comment-dots field-icon icon-top"></i>
+                                <textarea id="ticketMessage" rows="4" placeholder="Describe your query..."
+                                    required></textarea>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn-join btn-submit-ticket">Dispatch Ticket</button>
+                    </form>
+                </div>
+
+                <!-- CUSTOM NOTIFICATION BANNER (Replaces browser alert) -->
+                <div class="toast-notification hidden" id="toastNotice">
+                    <div class="toast-content">
+                        <i class="fa-solid fa-circle-check toast-icon"></i>
+                        <div>
+                            <h4>Ticket Dispatched</h4>
+                            <p>Ground control engineers have received your transmission.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+    </div>
+
+    <script src="client.js"></script>
+
+    <script>
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // 1. Session Storage Check with Fallback
+            let activeUser = sessionStorage.getItem('activeUserEmail');
+            if (!activeUser) {
+                activeUser = 'client@spacly.com';
+                sessionStorage.setItem('activeUserEmail', activeUser);
+            }
+
+            // Render User Email
+            const clientTopEmail = document.getElementById('clientTopEmail');
+            const clientSidebarEmail = document.getElementById('clientSidebarEmail');
+            if (clientTopEmail) clientTopEmail.textContent = activeUser;
+            if (clientSidebarEmail) clientSidebarEmail.textContent = activeUser;
+
+            // 2. Hamburger Drawer Controls
+            const sidebar = document.getElementById('clientSidebar');
+            const clientHamburgerBtn = document.getElementById('clientHamburgerBtn');
+            const clientSidebarCloseBtn = document.getElementById('clientSidebarCloseBtn');
+
+            if (clientHamburgerBtn && sidebar) {
+                clientHamburgerBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    sidebar.classList.add('active');
+                });
+            }
+
+            if (clientSidebarCloseBtn && sidebar) {
+                clientSidebarCloseBtn.addEventListener('click', () => {
+                    sidebar.classList.remove('active');
+                });
+            }
+
+            // Close mobile drawer when clicking outside
+            document.addEventListener('click', (e) => {
+                if (window.innerWidth <= 768 && sidebar && sidebar.classList.contains('active')) {
+                    if (!sidebar.contains(e.target) && clientHamburgerBtn && !clientHamburgerBtn.contains(e.target)) {
+                        sidebar.classList.remove('active');
+                    }
+                }
+            });
+
+            // 3. Section Switching Logic
+            const sidebarLinks = document.querySelectorAll('.sidebar-link');
+            const sections = document.querySelectorAll('.dash-section');
+            const clientSectionTitle = document.getElementById('clientSectionTitle');
+
+            sidebarLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+
+                    const targetSectionId = link.getAttribute('data-section');
+
+                    // Update nav link active class
+                    sidebarLinks.forEach(l => l.classList.remove('active'));
+                    link.classList.add('active');
+
+                    // Toggle visible section
+                    sections.forEach(section => {
+                        if (section.id === targetSectionId) {
+                            section.classList.remove('hidden');
+                            section.classList.add('active');
+                        } else {
+                            section.classList.add('hidden');
+                            section.classList.remove('active');
+                        }
+                    });
+
+                    // Update page title
+                    if (clientSectionTitle) {
+                        const linkText = link.querySelector('span');
+                        if (linkText) clientSectionTitle.textContent = linkText.textContent;
+                    }
+
+                    // Close mobile drawer
+                    if (window.innerWidth <= 768 && sidebar) {
+                        sidebar.classList.remove('active');
+                    }
+                });
+            });
+
+            // 4. Logout Handling
+            const clientLogoutBtn = document.getElementById('clientLogoutBtn');
+            if (clientLogoutBtn) {
+                clientLogoutBtn.addEventListener('click', () => {
+                    sessionStorage.clear();
+                    window.location.href = 'auth.html';
+                });
+            }
+        });
+
+
+
+
+
+
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // Custom Dropdown Handler
+            const dropdownWrap = document.getElementById('deptDropdown');
+            const dropdownTrigger = document.getElementById('dropdownTrigger');
+            const dropdownMenu = document.getElementById('dropdownMenu');
+            const dropdownItems = document.querySelectorAll('.dropdown-item');
+            const hiddenInput = document.getElementById('selectedDepartment');
+            const selectedText = dropdownTrigger ? dropdownTrigger.querySelector('.selected-text') : null;
+
+            if (dropdownTrigger && dropdownWrap) {
+                dropdownTrigger.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    dropdownWrap.classList.toggle('open');
+                });
+
+                dropdownItems.forEach(item => {
+                    item.addEventListener('click', () => {
+                        const value = item.getAttribute('data-value');
+
+                        dropdownItems.forEach(i => i.classList.remove('selected'));
+                        item.classList.add('selected');
+
+                        if (hiddenInput) hiddenInput.value = value;
+                        if (selectedText) selectedText.textContent = value;
+
+                        dropdownWrap.classList.remove('open');
+                    });
+                });
+
+                document.addEventListener('click', (e) => {
+                    if (!dropdownWrap.contains(e.target)) {
+                        dropdownWrap.classList.remove('open');
+                    }
+                });
+            }
+
+            // Support Form Handling with Toast Notification
+            const supportForm = document.getElementById('supportForm');
+            const toastNotice = document.getElementById('toastNotice');
+
+            if (supportForm) {
+                supportForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+
+                    const subject = document.getElementById('ticketSubject').value.trim();
+                    const message = document.getElementById('ticketMessage').value.trim();
+
+                    if (subject && message) {
+                        // Show Toast Notification
+                        if (toastNotice) {
+                            toastNotice.classList.remove('hidden');
+
+                            setTimeout(() => {
+                                toastNotice.classList.add('hidden');
+                            }, 4000);
+                        }
+
+                        supportForm.reset();
+
+                        // Reset dropdown to default option
+                        if (selectedText) selectedText.textContent = 'Orbital Engineering Support';
+                        if (hiddenInput) hiddenInput.value = 'Orbital Engineering Support';
+                    }
+                });
+            }
+        });
+
+
+
+    </script>
+
+
+
+</body>
+
+</html>

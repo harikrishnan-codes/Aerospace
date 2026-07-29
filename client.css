@@ -1,0 +1,873 @@
+.dashboard-body {
+  display: flex;
+  min-height: 100vh;
+  background-color: var(--color-bg-main);
+  overflow-x: hidden;
+}
+
+.sidebar {
+  width: 280px;
+  background-color: var(--color-bg-surface);
+  border-right: 1px solid var(--border-light, rgba(255, 255, 255, 0.1));
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  z-index: 1001;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.sidebar-header {
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border-light, rgba(255, 255, 255, 0.1));
+}
+
+.sidebar-close-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--color-text-primary);
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+
+.sidebar-user-info {
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border-bottom: 1px solid var(--border-light, rgba(255, 255, 255, 0.1));
+  background-color: var(--color-bg-main);
+}
+
+.sidebar-user-info i {
+  font-size: 1.8rem;
+  color: var(--color-accent-primary);
+}
+
+.user-details {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.user-role {
+  font-family: 'Chakra Petch', sans-serif;
+  font-size: 0.8rem;
+  color: var(--color-accent-primary);
+  text-transform: uppercase;
+}
+
+.user-email {
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sidebar-menu {
+  list-style: none;
+  padding: 1.5rem 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.85rem 1.5rem;
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  font-family: 'Chakra Petch', sans-serif;
+  font-size: 0.95rem;
+  transition: var(--transition-speed, 0.3s ease);
+}
+
+.sidebar-link:hover,
+.sidebar-link.active {
+  color: var(--color-accent-primary);
+  background-color: rgba(240, 62, 30, 0.08);
+  border-left: 3px solid var(--color-accent-primary);
+}
+
+.sidebar-footer {
+  padding: 1.5rem;
+  border-top: 1px solid var(--border-light, rgba(255, 255, 255, 0.1));
+}
+
+.btn-logout-sidebar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+}
+
+.dashboard-main-content {
+  flex: 1;
+  margin-left: 280px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.admin-topbar {
+  height: 70px;
+  background-color: var(--color-bg-surface);
+  border-bottom: 1px solid var(--border-light, rgba(255, 255, 255, 0.1));
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.topbar-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.topbar-title {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.admin-profile-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+}
+
+.admin-profile-badge i {
+  color: var(--color-accent-primary);
+  font-size: 1.2rem;
+}
+
+.dashboard-view-area {
+  padding: 2.5rem 2rem;
+  flex: 1;
+}
+
+.dash-section.hidden {
+  display: none !important;
+}
+
+.dash-page-title {
+  font-size: 1.8rem;
+  margin-bottom: 0.3rem;
+}
+
+.section-desc {
+  color: var(--color-text-secondary);
+  margin-bottom: 2rem;
+  font-size: 0.95rem;
+}
+
+/* Metrics & Table Panels */
+.dash-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.metric-card {
+  background-color: var(--color-bg-surface);
+  border: 1px solid var(--border-light, rgba(255, 255, 255, 0.1));
+  padding: 1.5rem;
+  border-radius: var(--border-radius-btn, 2px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.metric-icon {
+  font-size: 1.8rem;
+  color: var(--color-accent-primary);
+}
+
+.metric-info h4 {
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+.metric-value {
+  font-family: 'Chakra Petch', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin-top: 0.2rem;
+}
+
+.metric-status {
+  font-family: 'Chakra Petch', sans-serif;
+  font-size: 0.75rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 2px;
+}
+
+.status-nominal {
+  background-color: rgba(46, 204, 113, 0.15);
+  color: #2ecc71;
+}
+
+.table-container {
+  overflow-x: auto;
+  background-color: var(--color-bg-surface);
+  border: 1px solid var(--border-light, rgba(255, 255, 255, 0.1));
+}
+
+.dash-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.dash-table th,
+.dash-table td {
+  padding: 1rem 1.2rem;
+  border-bottom: 1px solid var(--border-light, rgba(255, 255, 255, 0.1));
+}
+
+.dash-table th {
+  font-family: 'Chakra Petch', sans-serif;
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  font-size: 0.85rem;
+}
+
+.badge {
+  padding: 0.25rem 0.6rem;
+  font-size: 0.75rem;
+  border-radius: 2px;
+  font-family: 'Chakra Petch', sans-serif;
+}
+
+.badge-success { background-color: rgba(46, 204, 113, 0.2); color: #2ecc71; }
+.badge-warning { background-color: rgba(241, 196, 15, 0.2); color: #f1c40f; }
+
+.btn-table-action {
+  background: none;
+  border: 1px solid var(--border-light, rgba(255, 255, 255, 0.2));
+  color: var(--color-text-primary);
+  padding: 0.4rem 0.9rem;
+  font-family: 'Chakra Petch', sans-serif;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: var(--transition-speed, 0.3s ease);
+}
+
+.btn-table-action:hover {
+  border-color: var(--color-accent-primary);
+  color: var(--color-accent-primary);
+}
+
+@media screen and (max-width: 768px) {
+  .sidebar {
+    transform: translateX(-100%);
+    width: 280px;
+    box-shadow: 10px 0 30px rgba(0, 0, 0, 0.7);
+  }
+
+  .sidebar.active {
+    transform: translateX(0);
+  }
+
+  .sidebar-close-btn {
+    display: block;
+  }
+
+  .dashboard-main-content {
+    margin-left: 0;
+  }
+
+  .admin-topbar {
+    padding: 0 1rem;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
+
+
+
+
+
+
+/* ==========================================================================
+   Mission Tracking Section Styles
+   ========================================================================== */
+
+/* Telemetry Top Banner */
+.telemetry-banner {
+  background-color: var(--color-bg-surface);
+  border: 1px solid var(--border-light, rgba(255, 255, 255, 0.1));
+  border-left: 4px solid var(--color-accent-primary);
+  border-radius: var(--border-radius-btn, 2px);
+  padding: 1.5rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.telemetry-status-box {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.telemetry-status-box i {
+  font-size: 2.2rem;
+  color: var(--color-accent-primary);
+}
+
+.telemetry-banner .label {
+  font-family: 'Chakra Petch', sans-serif;
+  font-size: 0.75rem;
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: block;
+  margin-bottom: 0.2rem;
+}
+
+.status-text {
+  font-family: 'Chakra Petch', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin: 0;
+  letter-spacing: 0.04em;
+}
+
+.countdown-box {
+  text-align: right;
+}
+
+.countdown-timer {
+  font-family: 'Chakra Petch', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-accent-primary);
+  letter-spacing: 0.05em;
+}
+
+/* Telemetry Gauges Grid */
+.telemetry-gauges-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.gauge-card {
+  background-color: var(--color-bg-surface);
+  border: 1px solid var(--border-light, rgba(255, 255, 255, 0.1));
+  border-radius: var(--border-radius-btn, 2px);
+  padding: 1.5rem;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.gauge-card:hover {
+  border-color: var(--color-accent-primary);
+  transform: translateY(-2px);
+}
+
+.gauge-card h4 {
+  font-family: 'Chakra Petch', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+  letter-spacing: 0.03em;
+}
+
+.gauge-value {
+  font-family: 'Chakra Petch', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin-bottom: 1rem;
+}
+
+.gauge-bar {
+  height: 8px;
+  width: 100%;
+  background-color: var(--color-bg-main);
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.gauge-fill {
+  height: 100%;
+  background-color: var(--color-accent-primary);
+  border-radius: 4px;
+  box-shadow: 0 0 10px var(--color-accent-glow);
+  transition: width 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ==========================================================================
+   Responsive Design Breakpoint (768px)
+   ========================================================================== */
+@media screen and (max-width: 768px) {
+  .telemetry-banner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+    padding: 1.25rem 1.5rem;
+  }
+
+  .countdown-box {
+    text-align: left;
+    width: 100%;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-light, rgba(255, 255, 255, 0.1));
+  }
+
+  .status-text {
+    font-size: 1.15rem;
+  }
+
+  .countdown-timer {
+    font-size: 1.1rem;
+  }
+
+  .telemetry-gauges-grid {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+
+  .gauge-card {
+    padding: 1.25rem;
+  }
+
+  .gauge-value {
+    font-size: 1.5rem;
+  }
+}
+
+
+
+
+
+
+
+/* ==========================================================================
+   Documents & Mission Reports Section Styles
+   ========================================================================== */
+
+/* Glass Container Panel */
+#docsSection .glass-panel {
+  background-color: var(--color-bg-surface);
+  border: 1px solid var(--border-light, rgba(255, 255, 255, 0.1));
+  border-radius: var(--border-radius-btn, 2px);
+  padding: 1.75rem 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Document List Items */
+#docsSection .alert-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  padding: 0;
+  margin: 0;
+}
+
+#docsSection .alert-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 1.2rem;
+  border-bottom: 1px dashed var(--border-light, rgba(255, 255, 255, 0.1));
+  gap: 1rem;
+}
+
+#docsSection .alert-list li:last-child {
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+/* Document Title & Icon Formatting */
+#docsSection .alert-list span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--color-text-primary);
+}
+
+#docsSection .alert-list i.icon-orange {
+  color: var(--color-accent-primary);
+  font-size: 1.15rem;
+}
+
+#docsSection .alert-list i.icon-blue {
+  color: #3498db;
+  font-size: 1.15rem;
+}
+
+#docsSection .alert-list i.icon-green {
+  color: #2ecc71;
+  font-size: 1.15rem;
+}
+
+/* Download Action Buttons */
+#docsSection .btn-table-action {
+  background-color: var(--color-bg-main);
+  border: 1px solid var(--border-light, rgba(255, 255, 255, 0.2));
+  color: var(--color-text-primary);
+  padding: 0.5rem 1.1rem;
+  font-family: 'Chakra Petch', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border-radius: var(--border-radius-btn, 2px);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+  transition: var(--transition-speed, 0.3s ease);
+}
+
+#docsSection .btn-table-action:hover {
+  border-color: var(--color-accent-primary);
+  color: var(--color-accent-primary);
+  box-shadow: 0 0 10px var(--color-accent-glow);
+}
+
+/* ==========================================================================
+   Responsive Design Breakpoint (768px)
+   ========================================================================== */
+@media screen and (max-width: 768px) {
+  #docsSection .glass-panel {
+    padding: 1.25rem 1.25rem;
+  }
+
+  #docsSection .alert-list {
+    gap: 1rem;
+  }
+
+  #docsSection .alert-list li {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.85rem;
+    padding-bottom: 1rem;
+  }
+
+  #docsSection .alert-list span {
+    font-size: 0.88rem;
+    line-height: 1.4;
+  }
+
+  #docsSection .btn-table-action {
+    width: 100%;
+    justify-content: center;
+    padding: 0.6rem 1rem;
+  }
+}
+
+
+
+
+
+
+
+/* ==========================================================================
+   Support Section & Custom Dropdown Styles
+   ========================================================================== */
+
+#supportSection .settings-card {
+  background-color: var(--color-bg-surface);
+  border: 1px solid var(--border-light, rgba(255, 255, 255, 0.1));
+  border-radius: var(--border-radius-btn, 2px);
+  padding: 2rem;
+  max-width: 650px;
+  position: relative;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+#supportSection .auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+#supportSection .input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+#supportSection .input-group label {
+  font-family: 'Chakra Petch', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+#supportSection .input-field {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+#supportSection .input-field.align-top {
+  align-items: flex-start;
+}
+
+#supportSection .field-icon {
+  position: absolute;
+  left: 1rem;
+  color: var(--color-text-muted, #5e6675);
+  font-size: 0.95rem;
+  pointer-events: none;
+  z-index: 3;
+}
+
+#supportSection .field-icon.icon-top {
+  top: 1rem;
+}
+
+#supportSection input[type="text"],
+#supportSection textarea {
+  width: 100%;
+  padding: 0.85rem 1rem 0.85rem 2.8rem;
+  background-color: var(--color-bg-main);
+  border: 1px solid var(--border-light, rgba(255, 255, 255, 0.1));
+  color: var(--color-text-primary, #ffffff);
+  border-radius: var(--border-radius-btn, 2px);
+  outline: none;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  transition: var(--transition-speed, 0.3s ease);
+}
+
+#supportSection textarea {
+  resize: vertical;
+  min-height: 110px;
+}
+
+#supportSection input:focus,
+#supportSection textarea:focus {
+  border-color: var(--color-accent-primary);
+  box-shadow: 0 0 8px var(--color-accent-glow, rgba(240, 62, 30, 0.35));
+}
+
+/* --- Custom Dropdown Menu --- */
+.custom-dropdown-wrap {
+  position: relative;
+}
+
+.dropdown-trigger {
+  width: 100%;
+  padding: 0.85rem 1rem 0.85rem 2.8rem;
+  background-color: var(--color-bg-main);
+  border: 1px solid var(--border-light, rgba(255, 255, 255, 0.1));
+  color: var(--color-text-primary, #ffffff);
+  border-radius: var(--border-radius-btn, 2px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  transition: var(--transition-speed, 0.3s ease);
+}
+
+.dropdown-trigger:hover,
+.custom-dropdown-wrap.open .dropdown-trigger {
+  border-color: var(--color-accent-primary);
+}
+
+.arrow-icon {
+  font-size: 0.8rem;
+  color: var(--color-text-secondary);
+  transition: transform 0.3s ease;
+}
+
+.custom-dropdown-wrap.open .arrow-icon {
+  transform: rotate(180deg);
+  color: var(--color-accent-primary);
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  width: 100%;
+  background-color: var(--color-bg-surface);
+  border: 1px solid var(--border-light, rgba(255, 255, 255, 0.15));
+  border-radius: var(--border-radius-btn, 2px);
+  list-style: none;
+  padding: 0.4rem 0;
+  margin: 0;
+  z-index: 10;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-8px);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.custom-dropdown-wrap.open .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-item {
+  padding: 0.75rem 1.25rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.dropdown-item i {
+  color: var(--color-text-muted);
+}
+
+.dropdown-item:hover,
+.dropdown-item.selected {
+  background-color: rgba(240, 62, 30, 0.1);
+  color: var(--color-text-primary);
+}
+
+.dropdown-item:hover i,
+.dropdown-item.selected i {
+  color: var(--color-accent-primary);
+}
+
+.btn-submit-ticket {
+  width: auto;
+  align-self: flex-start;
+  padding: 0.8rem 2rem;
+  margin-top: 0.5rem;
+  background-color: var(--color-accent-primary);
+  color: #ffffff;
+  font-family: 'Chakra Petch', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  border: none;
+  border-radius: var(--border-radius-btn, 2px);
+  cursor: pointer;
+  transition: var(--transition-speed, 0.3s ease);
+}
+
+.btn-submit-ticket:hover {
+  background-color: var(--color-accent-hover, #d32f13);
+  box-shadow: 0 0 15px var(--color-accent-glow, rgba(240, 62, 30, 0.35));
+}
+
+/* --- Toast Notification Banner --- */
+.toast-notification {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background-color: var(--color-bg-surface);
+  border: 1px solid #2ecc71;
+  border-left: 4px solid #2ecc71;
+  border-radius: var(--border-radius-btn, 2px);
+  padding: 1rem 1.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+  z-index: 2000;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.toast-notification.hidden {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+}
+
+.toast-content {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.toast-icon {
+  font-size: 1.8rem;
+  color: #2ecc71;
+}
+
+.toast-content h4 {
+  font-family: 'Chakra Petch', sans-serif;
+  font-size: 1rem;
+  color: #ffffff;
+  margin: 0;
+}
+
+.toast-content p {
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+/* ==========================================================================
+   Responsive Design Breakpoint (768px)
+   ========================================================================== */
+@media screen and (max-width: 768px) {
+  #supportSection .settings-card {
+    padding: 1.25rem 1rem;
+  }
+
+  .dropdown-trigger,
+  #supportSection input[type="text"],
+  #supportSection textarea {
+    font-size: 0.88rem;
+    padding-left: 2.5rem;
+  }
+
+  #supportSection .field-icon {
+    left: 0.85rem;
+    font-size: 0.88rem;
+  }
+
+  .dropdown-item {
+    padding: 0.7rem 1rem;
+    font-size: 0.85rem;
+  }
+
+  .btn-submit-ticket {
+    width: 100%;
+    text-align: center;
+    padding: 0.85rem 1rem;
+  }
+
+  .toast-notification {
+    left: 1rem;
+    right: 1rem;
+    bottom: 1rem;
+  }
+}

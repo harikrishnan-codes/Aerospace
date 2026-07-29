@@ -1,0 +1,218 @@
+.auth-wrapper,
+.dashboard-wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
+.auth-card,
+.dashboard-card {
+  max-width: 480px;
+  width: 100%;
+  margin: 0 auto;
+  background-color: var(--color-bg-surface);
+  border: 1px solid var(--border-light, rgba(255, 255, 255, 0.1));
+  border-radius: var(--border-radius-btn, 2px);
+  padding: 2.5rem 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.auth-card.hidden {
+  display: none !important;
+}
+
+.auth-title {
+  margin-top: 1rem;
+  font-size: 1.6rem;
+}
+
+.auth-subtitle {
+  color: var(--color-text-secondary);
+  font-size: 0.88rem;
+  margin-bottom: 2rem;
+}
+
+.auth-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  text-align: left;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.input-group label {
+  font-family: 'Chakra Petch', sans-serif;
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+}
+
+.input-field {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.field-icon {
+  position: absolute;
+  left: 1rem;
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+}
+
+.input-field input,
+.input-field select {
+  width: 100%;
+  padding: 0.85rem 2.8rem 0.85rem 2.8rem;
+  background-color: var(--color-bg-main);
+  border: 1px solid var(--border-light, rgba(255, 255, 255, 0.1));
+  color: var(--color-text-primary);
+  border-radius: var(--border-radius-btn, 2px);
+  outline: none;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  transition: var(--transition-speed, 0.3s ease);
+}
+
+.input-field select option {
+  background-color: var(--color-bg-main);
+  color: var(--color-text-primary);
+}
+
+.input-field input:focus,
+.input-field select:focus {
+  border-color: var(--color-accent-primary);
+}
+
+.toggle-password {
+  position: absolute;
+  right: 1rem;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: var(--transition-speed, 0.3s ease);
+}
+
+.toggle-password:hover {
+  color: var(--color-accent-primary);
+}
+
+.error-msg {
+  color: var(--color-accent-primary);
+  font-size: 0.78rem;
+  min-height: 18px;
+  display: block;
+  margin-top: 2px;
+}
+
+.forgot-pass-wrapper {
+  text-align: right;
+  margin-top: -0.5rem;
+}
+
+.forgot-pass-wrapper a {
+  font-size: 0.8rem;
+  color: var(--color-text-secondary);
+  text-decoration: none;
+}
+
+.forgot-pass-wrapper a:hover {
+  color: var(--color-accent-primary);
+}
+
+.btn-auth {
+  width: 100%;
+  margin-top: 0.5rem;
+  border: none;
+  cursor: pointer;
+}
+
+.auth-switch {
+  margin-top: 1.5rem;
+  font-size: 0.88rem;
+  color: var(--color-text-secondary);
+}
+
+.auth-switch a {
+  color: var(--color-accent-primary);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.dash-title {
+  margin-top: 1rem;
+  font-size: 1.8rem;
+}
+
+.dash-welcome {
+  color: var(--color-text-secondary);
+  margin-top: 0.5rem;
+}
+
+.user-badge {
+  margin: 1.5rem 0 0.5rem;
+  padding: 0.8rem 1.5rem;
+  background-color: var(--color-bg-main);
+  border: 1px solid var(--color-accent-primary);
+  border-radius: var(--border-radius-btn, 2px);
+  color: var(--color-text-primary);
+  font-family: 'Chakra Petch', sans-serif;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.user-badge i {
+  color: var(--color-accent-primary);
+}
+
+.role-badge {
+  color: var(--color-text-secondary);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 2rem;
+}
+
+.btn-logout {
+  gap: 0.5rem;
+}
+
+@media screen and (max-width: 768px) {
+  .auth-wrapper,
+  .dashboard-wrapper {
+    padding: 1.5rem 0.5rem;
+  }
+
+  .auth-card,
+  .dashboard-card {
+    padding: 2rem 1.25rem;
+  }
+
+  .auth-title {
+    font-size: 1.35rem;
+  }
+
+  .dash-title {
+    font-size: 1.4rem;
+  }
+
+  .user-badge {
+    font-size: 0.95rem;
+    padding: 0.6rem 1rem;
+    word-break: break-all;
+  }
+}
