@@ -191,6 +191,96 @@
   gap: 0.5rem;
 }
 
+/* Custom Dropdown Container */
+.custom-dropdown-wrap {
+  position: relative;
+  width: 100%;
+}
+
+.dropdown-trigger {
+  width: 100%;
+  padding: 0.85rem 1rem 0.85rem 2.8rem;
+  background-color: var(--color-bg-main);
+  border: 1px solid var(--border-light, rgba(255, 255, 255, 0.1));
+  color: var(--color-text-primary, #ffffff);
+  border-radius: var(--border-radius-btn, 2px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  transition: var(--transition-speed, 0.3s ease);
+}
+
+.dropdown-trigger:hover,
+.custom-dropdown-wrap.open .dropdown-trigger {
+  border-color: var(--color-accent-primary);
+}
+
+.arrow-icon {
+  font-size: 0.8rem;
+  color: var(--color-text-secondary);
+  transition: transform 0.3s ease;
+}
+
+.custom-dropdown-wrap.open .arrow-icon {
+  transform: rotate(180deg);
+  color: var(--color-accent-primary);
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  width: 100%;
+  background-color: var(--color-bg-surface);
+  border: 1px solid var(--border-light, rgba(255, 255, 255, 0.15));
+  border-radius: var(--border-radius-btn, 2px);
+  list-style: none;
+  padding: 0.4rem 0;
+  margin: 0;
+  z-index: 20;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-8px);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.custom-dropdown-wrap.open .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-item {
+  padding: 0.75rem 1.25rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.dropdown-item i {
+  color: var(--color-text-muted);
+}
+
+.dropdown-item:hover,
+.dropdown-item.selected {
+  background-color: rgba(240, 62, 30, 0.1);
+  color: var(--color-text-primary);
+}
+
+.dropdown-item:hover i,
+.dropdown-item.selected i {
+  color: var(--color-accent-primary);
+}
+
 @media screen and (max-width: 768px) {
   .auth-wrapper,
   .dashboard-wrapper {

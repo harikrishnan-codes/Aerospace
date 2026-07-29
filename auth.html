@@ -53,14 +53,24 @@
                     </div>
 
                     <div class="input-group">
-                        <label for="signupRole">User Role</label>
-                        <div class="input-field">
+                        <label>User Role</label>
+                        <div class="input-field custom-dropdown-wrap" id="roleDropdown">
                             <i class="fa-solid fa-user-gear field-icon"></i>
-                            <select id="signupRole" required>
-                                <option value="" disabled selected>Select Role</option>
-                                <option value="Client">Client</option>
-                                <option value="Admin">Admin</option>
-                            </select>
+                            <input type="hidden" id="signupRole" value="">
+
+                            <button type="button" class="dropdown-trigger" id="roleDropdownTrigger">
+                                <span class="selected-text">Select Role</span>
+                                <i class="fa-solid fa-chevron-down arrow-icon"></i>
+                            </button>
+
+                            <ul class="dropdown-menu" id="roleDropdownMenu">
+                                <li class="dropdown-item" data-value="Client">
+                                    <i class="fa-solid fa-user"></i> Client
+                                </li>
+                                <li class="dropdown-item" data-value="Admin">
+                                    <i class="fa-solid fa-user-shield"></i> Admin
+                                </li>
+                            </ul>
                         </div>
                         <span class="error-msg" id="signupRoleError"></span>
                     </div>
@@ -154,174 +164,214 @@
 
     <script>
 
-       document.addEventListener('DOMContentLoaded', () => {
-    if (typeof AOS !== 'undefined') {
-        AOS.init({ duration: 800, once: true });
-    }
-
-    const signupCard = document.getElementById('signupCard');
-    const loginCard = document.getElementById('loginCard');
-    const forgotCard = document.getElementById('forgotCard');
-
-    const toLoginBtn = document.getElementById('toLoginBtn');
-    const toSignupBtn = document.getElementById('toSignupBtn');
-    const toForgotBtn = document.getElementById('toForgotBtn');
-    const backToLoginBtn = document.getElementById('backToLoginBtn');
-
-    function switchCard(hideCard, showCard) {
-        hideCard.classList.add('hidden');
-        showCard.classList.remove('hidden');
-    }
-
-    toLoginBtn.addEventListener('click', (e) => { e.preventDefault(); switchCard(signupCard, loginCard); });
-    toSignupBtn.addEventListener('click', (e) => { e.preventDefault(); switchCard(loginCard, signupCard); });
-    toForgotBtn.addEventListener('click', (e) => { e.preventDefault(); switchCard(loginCard, forgotCard); });
-    backToLoginBtn.addEventListener('click', (e) => { e.preventDefault(); switchCard(forgotCard, loginCard); });
-
-    document.querySelectorAll('.toggle-password').forEach(icon => {
-        icon.addEventListener('click', () => {
-            const input = icon.previousElementSibling;
-            if (input.type === 'password') {
-                input.type = 'text';
-                icon.classList.replace('fa-eye', 'fa-eye-slash');
-            } else {
-                input.type = 'password';
-                icon.classList.replace('fa-eye-slash', 'fa-eye');
+        document.addEventListener('DOMContentLoaded', () => {
+            if (typeof AOS !== 'undefined') {
+                AOS.init({duration: 800, once: true});
             }
-        });
-    });
 
-    const alphaRegex = /^[A-Za-z\s]+$/;
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            const signupCard = document.getElementById('signupCard');
+            const loginCard = document.getElementById('loginCard');
+            const forgotCard = document.getElementById('forgotCard');
 
-    const signupForm = document.getElementById('signupForm');
-    signupForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        let isValid = true;
+            const toLoginBtn = document.getElementById('toLoginBtn');
+            const toSignupBtn = document.getElementById('toSignupBtn');
+            const toForgotBtn = document.getElementById('toForgotBtn');
+            const backToLoginBtn = document.getElementById('backToLoginBtn');
 
-        const nameInput = document.getElementById('signupName');
-        const emailInput = document.getElementById('signupEmail');
-        const roleInput = document.getElementById('signupRole');
-        const passwordInput = document.getElementById('signupPassword');
+            function switchCard(hideCard, showCard) {
+                hideCard.classList.add('hidden');
+                showCard.classList.remove('hidden');
+            }
 
-        const nameErr = document.getElementById('signupNameError');
-        const emailErr = document.getElementById('signupEmailError');
-        const roleErr = document.getElementById('signupRoleError');
-        const passErr = document.getElementById('signupPasswordError');
+            toLoginBtn.addEventListener('click', (e) => {e.preventDefault(); switchCard(signupCard, loginCard);});
+            toSignupBtn.addEventListener('click', (e) => {e.preventDefault(); switchCard(loginCard, signupCard);});
+            toForgotBtn.addEventListener('click', (e) => {e.preventDefault(); switchCard(loginCard, forgotCard);});
+            backToLoginBtn.addEventListener('click', (e) => {e.preventDefault(); switchCard(forgotCard, loginCard);});
 
-        if (!nameInput.value.trim()) {
-            nameErr.textContent = 'Name is required.';
-            isValid = false;
-        } else if (!alphaRegex.test(nameInput.value.trim())) {
-            nameErr.textContent = 'Name must only contain alphabets.';
-            isValid = false;
-        } else {
-            nameErr.textContent = '';
-        }
+            document.querySelectorAll('.toggle-password').forEach(icon => {
+                icon.addEventListener('click', () => {
+                    const input = icon.previousElementSibling;
+                    if (input.type === 'password') {
+                        input.type = 'text';
+                        icon.classList.replace('fa-eye', 'fa-eye-slash');
+                    } else {
+                        input.type = 'password';
+                        icon.classList.replace('fa-eye-slash', 'fa-eye');
+                    }
+                });
+            });
 
-        if (!emailInput.value.trim()) {
-            emailErr.textContent = 'Email is required.';
-            isValid = false;
-        } else if (!emailRegex.test(emailInput.value.trim())) {
-            emailErr.textContent = 'Invalid email format (e.g. user@domain.com).';
-            isValid = false;
-        } else {
-            emailErr.textContent = '';
-        }
+            const alphaRegex = /^[A-Za-z\s]+$/;
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-        if (!roleInput.value) {
-            roleErr.textContent = 'Please select a role.';
-            isValid = false;
-        } else {
-            roleErr.textContent = '';
-        }
+            const signupForm = document.getElementById('signupForm');
+            signupForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                let isValid = true;
 
-        if (!passwordInput.value) {
-            passErr.textContent = 'Password is required.';
-            isValid = false;
-        } else if (passwordInput.value.length < 6) {
-            passErr.textContent = 'Password must be at least 6 characters.';
-            isValid = false;
-        } else {
-            passErr.textContent = '';
-        }
+                const nameInput = document.getElementById('signupName');
+                const emailInput = document.getElementById('signupEmail');
+                const roleInput = document.getElementById('signupRole');
+                const passwordInput = document.getElementById('signupPassword');
 
-        if (isValid) {
-            const userData = {
-                name: nameInput.value.trim(),
-                email: emailInput.value.trim(),
-                role: roleInput.value,
-                password: passwordInput.value
-            };
-            localStorage.setItem('registeredUser', JSON.stringify(userData));
-            signupForm.reset();
-            switchCard(signupCard, loginCard);
-        }
-    });
+                const nameErr = document.getElementById('signupNameError');
+                const emailErr = document.getElementById('signupEmailError');
+                const roleErr = document.getElementById('signupRoleError');
+                const passErr = document.getElementById('signupPasswordError');
 
-    const loginForm = document.getElementById('loginForm');
-    loginForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        let isValid = true;
-
-        const emailInput = document.getElementById('loginEmail');
-        const passwordInput = document.getElementById('loginPassword');
-
-        const emailErr = document.getElementById('loginEmailError');
-        const passErr = document.getElementById('loginPasswordError');
-
-        if (!emailInput.value.trim()) {
-            emailErr.textContent = 'Email is required.';
-            isValid = false;
-        } else if (!emailRegex.test(emailInput.value.trim())) {
-            emailErr.textContent = 'Invalid email format.';
-            isValid = false;
-        } else {
-            emailErr.textContent = '';
-        }
-
-        if (!passwordInput.value) {
-            passErr.textContent = 'Password is required.';
-            isValid = false;
-        } else {
-            passErr.textContent = '';
-        }
-
-        if (isValid) {
-            const savedUser = JSON.parse(localStorage.getItem('registeredUser'));
-
-            if (savedUser && savedUser.email === emailInput.value.trim() && savedUser.password === passwordInput.value) {
-                sessionStorage.setItem('activeUserEmail', savedUser.email);
-                sessionStorage.setItem('activeUserRole', savedUser.role);
-
-                // Role-based redirection logic
-                if (savedUser.role === 'Admin') {
-                    window.location.href = 'admin.html';
+                if (!nameInput.value.trim()) {
+                    nameErr.textContent = 'Name is required.';
+                    isValid = false;
+                } else if (!alphaRegex.test(nameInput.value.trim())) {
+                    nameErr.textContent = 'Name must only contain alphabets.';
+                    isValid = false;
                 } else {
-                    window.location.href = 'client.html';
+                    nameErr.textContent = '';
                 }
-            } else {
-                emailErr.textContent = 'Invalid email or password credentials.';
-            }
-        }
-    });
 
-    const forgotForm = document.getElementById('forgotForm');
-    forgotForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const emailInput = document.getElementById('forgotEmail');
-        const emailErr = document.getElementById('forgotEmailError');
+                if (!emailInput.value.trim()) {
+                    emailErr.textContent = 'Email is required.';
+                    isValid = false;
+                } else if (!emailRegex.test(emailInput.value.trim())) {
+                    emailErr.textContent = 'Invalid email format (e.g. user@domain.com).';
+                    isValid = false;
+                } else {
+                    emailErr.textContent = '';
+                }
 
-        if (!emailInput.value.trim()) {
-            emailErr.textContent = 'Email is required.';
-        } else if (!emailRegex.test(emailInput.value.trim())) {
-            emailErr.textContent = 'Invalid email format.';
-        } else {
-            emailErr.textContent = '';
-            window.location.href = 'error.html';
-        }
+                if (!roleInput.value) {
+                    roleErr.textContent = 'Please select a role.';
+                    isValid = false;
+                } else {
+                    roleErr.textContent = '';
+                }
+
+                if (!passwordInput.value) {
+                    passErr.textContent = 'Password is required.';
+                    isValid = false;
+                } else if (passwordInput.value.length < 6) {
+                    passErr.textContent = 'Password must be at least 6 characters.';
+                    isValid = false;
+                } else {
+                    passErr.textContent = '';
+                }
+
+                if (isValid) {
+                    const userData = {
+                        name: nameInput.value.trim(),
+                        email: emailInput.value.trim(),
+                        role: roleInput.value,
+                        password: passwordInput.value
+                    };
+                    localStorage.setItem('registeredUser', JSON.stringify(userData));
+                    signupForm.reset();
+                    switchCard(signupCard, loginCard);
+                }
+            });
+
+            const loginForm = document.getElementById('loginForm');
+            loginForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                let isValid = true;
+
+                const emailInput = document.getElementById('loginEmail');
+                const passwordInput = document.getElementById('loginPassword');
+
+                const emailErr = document.getElementById('loginEmailError');
+                const passErr = document.getElementById('loginPasswordError');
+
+                if (!emailInput.value.trim()) {
+                    emailErr.textContent = 'Email is required.';
+                    isValid = false;
+                } else if (!emailRegex.test(emailInput.value.trim())) {
+                    emailErr.textContent = 'Invalid email format.';
+                    isValid = false;
+                } else {
+                    emailErr.textContent = '';
+                }
+
+                if (!passwordInput.value) {
+                    passErr.textContent = 'Password is required.';
+                    isValid = false;
+                } else {
+                    passErr.textContent = '';
+                }
+
+                if (isValid) {
+                    const savedUser = JSON.parse(localStorage.getItem('registeredUser'));
+
+                    if (savedUser && savedUser.email === emailInput.value.trim() && savedUser.password === passwordInput.value) {
+                        sessionStorage.setItem('activeUserEmail', savedUser.email);
+                        sessionStorage.setItem('activeUserRole', savedUser.role);
+
+                        // Role-based redirection logic
+                        if (savedUser.role === 'Admin') {
+                            window.location.href = 'admin.html';
+                        } else {
+                            window.location.href = 'client.html';
+                        }
+                    } else {
+                        emailErr.textContent = 'Invalid email or password credentials.';
+                    }
+                }
+            });
+
+            const forgotForm = document.getElementById('forgotForm');
+            forgotForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const emailInput = document.getElementById('forgotEmail');
+                const emailErr = document.getElementById('forgotEmailError');
+
+                if (!emailInput.value.trim()) {
+                    emailErr.textContent = 'Email is required.';
+                } else if (!emailRegex.test(emailInput.value.trim())) {
+                    emailErr.textContent = 'Invalid email format.';
+                } else {
+                    emailErr.textContent = '';
+                    window.location.href = 'error.html';
+                }
+            });
+        });
+
+
+
+
+// Custom Role Dropdown Handler
+const roleDropdownWrap = document.getElementById('roleDropdown');
+const roleDropdownTrigger = document.getElementById('roleDropdownTrigger');
+const roleDropdownItems = document.querySelectorAll('#roleDropdownMenu .dropdown-item');
+const signupRoleInput = document.getElementById('signupRole');
+const triggerText = roleDropdownTrigger ? roleDropdownTrigger.querySelector('.selected-text') : null;
+const roleErr = document.getElementById('signupRoleError');
+
+if (roleDropdownTrigger && roleDropdownWrap) {
+  roleDropdownTrigger.addEventListener('click', (e) => {
+    e.stopPropagation();
+    roleDropdownWrap.classList.toggle('open');
+  });
+
+  roleDropdownItems.forEach(item => {
+    item.addEventListener('click', () => {
+      const val = item.getAttribute('data-value');
+
+      roleDropdownItems.forEach(i => i.classList.remove('selected'));
+      item.classList.add('selected');
+
+      if (signupRoleInput) signupRoleInput.value = val;
+      if (triggerText) triggerText.textContent = val;
+      if (roleErr) roleErr.textContent = ''; // Clear error on selection
+
+      roleDropdownWrap.classList.remove('open');
     });
-});
+  });
+
+  // Close dropdown when clicking anywhere outside
+  document.addEventListener('click', (e) => {
+    if (!roleDropdownWrap.contains(e.target)) {
+      roleDropdownWrap.classList.remove('open');
+    }
+  });
+}
 
     </script>
 
